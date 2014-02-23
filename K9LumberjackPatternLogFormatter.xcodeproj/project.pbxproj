@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5EF2DEB18B923910072971D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2DEA18B923910072971D /* XCTest.framework */; };
+		A5EF2DF718B923910072971D /* K9LumberjackPatternLogFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF2DF618B923910072971D /* K9LumberjackPatternLogFormatterTests.m */; };
+		A5EF2DFF18B926220072971D /* K9LumberjackPatternLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF2DFE18B926220072971D /* K9LumberjackPatternLogFormatter.m */; };
+		A5EF2E0118B996770072971D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2E0018B996770072971D /* Foundation.framework */; };
+		B29A8912E3C94B2B85C2A267 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0E7260B7F14A6FAA529327 /* libPods-Tests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A5EF2DE718B923910072971D /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EF2DEA18B923910072971D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A5EF2DF218B923910072971D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EF2DF618B923910072971D /* K9LumberjackPatternLogFormatterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = K9LumberjackPatternLogFormatterTests.m; sourceTree = "<group>"; };
+		A5EF2DF818B923910072971D /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		A5EF2DFD18B926220072971D /* K9LumberjackPatternLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LumberjackPatternLogFormatter.h; sourceTree = "<group>"; };
+		A5EF2DFE18B926220072971D /* K9LumberjackPatternLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LumberjackPatternLogFormatter.m; sourceTree = "<group>"; };
+		A5EF2E0018B996770072971D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BA74860CD56D4EC096CAB31E /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
+		DE0E7260B7F14A6FAA529327 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5EF2DE418B923910072971D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EF2E0118B996770072971D /* Foundation.framework in Frameworks */,
+				A5EF2DEB18B923910072971D /* XCTest.framework in Frameworks */,
+				B29A8912E3C94B2B85C2A267 /* libPods-Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5EF2DDC18B9233F0072971D = {
+			isa = PBXGroup;
+			children = (
+				A5EF2DFC18B926220072971D /* Classes */,
+				A5EF2DF018B923910072971D /* Tests */,
+				A5EF2DE918B923910072971D /* Frameworks */,
+				A5EF2DE818B923910072971D /* Products */,
+				BA74860CD56D4EC096CAB31E /* Pods-Tests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A5EF2DE818B923910072971D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2DE718B923910072971D /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5EF2DE918B923910072971D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2E0018B996770072971D /* Foundation.framework */,
+				A5EF2DEA18B923910072971D /* XCTest.framework */,
+				DE0E7260B7F14A6FAA529327 /* libPods-Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5EF2DF018B923910072971D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2DF618B923910072971D /* K9LumberjackPatternLogFormatterTests.m */,
+				A5EF2DF118B923910072971D /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A5EF2DF118B923910072971D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2DF218B923910072971D /* Info.plist */,
+				A5EF2DF818B923910072971D /* Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5EF2DFC18B926220072971D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2DFD18B926220072971D /* K9LumberjackPatternLogFormatter.h */,
+				A5EF2DFE18B926220072971D /* K9LumberjackPatternLogFormatter.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5EF2DE618B923910072971D /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5EF2DF918B923910072971D /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				5E3FC45424EE450F834BC84B /* Check Pods Manifest.lock */,
+				A5EF2DE318B923910072971D /* Sources */,
+				A5EF2DE418B923910072971D /* Frameworks */,
+				A5EF2DE518B923910072971D /* Resources */,
+				F9BD64B0A8364DCCBB7B4C4E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = K9LumberjackPatternLogFormatter;
+			productReference = A5EF2DE718B923910072971D /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5EF2DDD18B9233F0072971D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = A5EF2DE018B9233F0072971D /* Build configuration list for PBXProject "K9LumberjackPatternLogFormatter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A5EF2DDC18B9233F0072971D;
+			productRefGroup = A5EF2DE818B923910072971D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5EF2DE618B923910072971D /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5EF2DE518B923910072971D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E3FC45424EE450F834BC84B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9BD64B0A8364DCCBB7B4C4E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5EF2DE318B923910072971D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EF2DFF18B926220072971D /* K9LumberjackPatternLogFormatter.m in Sources */,
+				A5EF2DF718B923910072971D /* K9LumberjackPatternLogFormatterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A5EF2DE118B9233F0072971D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A5EF2DE218B9233F0072971D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		A5EF2DFA18B923910072971D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA74860CD56D4EC096CAB31E /* Pods-Tests.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A5EF2DFB18B923910072971D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA74860CD56D4EC096CAB31E /* Pods-Tests.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/Prefix.pch;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5EF2DE018B9233F0072971D /* Build configuration list for PBXProject "K9LumberjackPatternLogFormatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF2DE118B9233F0072971D /* Debug */,
+				A5EF2DE218B9233F0072971D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EF2DF918B923910072971D /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF2DFA18B923910072971D /* Debug */,
+				A5EF2DFB18B923910072971D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5EF2DDD18B9233F0072971D /* Project object */;
+}
