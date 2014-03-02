@@ -1,7 +1,0 @@
-pod "K9LumberjackPatternLogFormatter", :path => "../K9LumberjackPatternLogFormatter.podspec"
-
-target "Demo" do
-end
-
-target "DemoTests" do
-end

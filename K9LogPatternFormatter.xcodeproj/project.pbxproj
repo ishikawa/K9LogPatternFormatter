@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		A580A1F818C2C04900AD8F75 /* Tests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A580A1F918C2C04900AD8F75 /* Build configuration list for PBXAggregateTarget "Tests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				A580A1FF18C2C06200AD8F75 /* PBXTargetDependency */,
+				A580A1FD18C2C05F00AD8F75 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2393F91F6674428995E07007 /* libPods-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C036EA4341A42D187BEBACE /* libPods-OSX.a */; };
+		3257B29894A043FDA2E595D5 /* libPods-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCACFE782CAE4A30B1EC91D4 /* libPods-iOS.a */; };
+		A50F7AA218C5B4C8003B795E /* K9LogLevelPatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */; };
+		A50F7AA318C5B4C8003B795E /* K9LogLevelPatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */; };
+		A50F7AA618C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */; };
+		A50F7AA718C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */; };
+		A50F7AA918C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */; };
+		A50F7AAA18C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */; };
+		A50F7AAE18C5EE4C003B795E /* K9ThreadLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */; };
+		A50F7AAF18C5EE4C003B795E /* K9ThreadLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */; };
+		A50F7AB218C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */; };
+		A50F7AB318C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */; };
+		A50F7AB618C5F92F003B795E /* K9ThreadLocalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */; };
+		A50F7AB718C5F92F003B795E /* K9ThreadLocalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */; };
+		A50F7ABD18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */; };
+		A50F7ABE18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */; };
+		A50F7AC018C61809003B795E /* K9LogPatternParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */; };
+		A50F7AC118C61809003B795E /* K9LogPatternParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */; };
+		A580A1E718C2B89900AD8F75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2DEA18B923910072971D /* XCTest.framework */; };
+		A580A20F18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */; };
+		A580A21018C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */; };
+		A580A22E18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22618C2D5F500AD8F75 /* K9LogPatternComponent.m */; };
+		A580A22F18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22618C2D5F500AD8F75 /* K9LogPatternComponent.m */; };
+		A580A23018C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22818C2D5F500AD8F75 /* K9LogPatternModifier.m */; };
+		A580A23118C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22818C2D5F500AD8F75 /* K9LogPatternModifier.m */; };
+		A580A23218C2D5F500AD8F75 /* K9LogPatternParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22A18C2D5F500AD8F75 /* K9LogPatternParser.m */; };
+		A580A23318C2D5F500AD8F75 /* K9LogPatternParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22A18C2D5F500AD8F75 /* K9LogPatternParser.m */; };
+		A580A23418C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22D18C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m */; };
+		A580A23518C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A22D18C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m */; };
+		A580A23718C2D64400AD8F75 /* K9LogPatternFormatterErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A23618C2D64400AD8F75 /* K9LogPatternFormatterErrors.m */; };
+		A580A23818C2D64400AD8F75 /* K9LogPatternFormatterErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A23618C2D64400AD8F75 /* K9LogPatternFormatterErrors.m */; };
+		A580A23E18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A23D18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m */; };
+		A580A23F18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A23D18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m */; };
+		A580A24218C4AEB000AD8F75 /* LogMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A24118C4AEB000AD8F75 /* LogMessage.m */; };
+		A580A24318C4AEB000AD8F75 /* LogMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A24118C4AEB000AD8F75 /* LogMessage.m */; };
+		A580A24518C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A24418C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m */; };
+		A580A24618C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A24418C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m */; };
+		A5EF2DEB18B923910072971D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2DEA18B923910072971D /* XCTest.framework */; };
+		A5EF2E0118B996770072971D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2E0018B996770072971D /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A580A1FC18C2C05F00AD8F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5EF2DDD18B9233F0072971D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5EF2DE618B923910072971D;
+			remoteInfo = iOS;
+		};
+		A580A1FE18C2C06200AD8F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5EF2DDD18B9233F0072971D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A580A1E518C2B89900AD8F75;
+			remoteInfo = OSX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C036EA4341A42D187BEBACE /* libPods-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSX.xcconfig"; path = "Pods/Pods-OSX.xcconfig"; sourceTree = "<group>"; };
+		A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogLevelPatternComponentTests.m; sourceTree = "<group>"; };
+		A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMinWidthConstraintTests.m; sourceTree = "<group>"; };
+		A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMaxWidthConstraintTests.m; sourceTree = "<group>"; };
+		A50F7AAC18C5EE4C003B795E /* K9ThreadLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9ThreadLocal.h; sourceTree = "<group>"; };
+		A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9ThreadLocal.m; sourceTree = "<group>"; };
+		A50F7AB018C5F1FF003B795E /* K9LogPatternDateComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternDateComponent.h; sourceTree = "<group>"; };
+		A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternDateComponent.m; sourceTree = "<group>"; };
+		A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9ThreadLocalTests.m; sourceTree = "<group>"; };
+		A50F7AB818C5FCB3003B795E /* K9ThreadLocal+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "K9ThreadLocal+Private.h"; sourceTree = "<group>"; };
+		A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogDatePatternComponentTests.m; sourceTree = "<group>"; };
+		A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternParserTests.m; sourceTree = "<group>"; };
+		A580A1E618C2B89900AD8F75 /* OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A580A20718C2C2EA00AD8F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A580A20818C2C2EA00AD8F75 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		A580A20B18C2C2EA00AD8F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A580A20C18C2C2EA00AD8F75 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LumberjackPatternLogFormatterTests.m; sourceTree = "<group>"; };
+		A580A22318C2D5F500AD8F75 /* K9LogPatternFormatterErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternFormatterErrors.h; sourceTree = "<group>"; };
+		A580A22418C2D5F500AD8F75 /* K9LogMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogMessage.h; sourceTree = "<group>"; };
+		A580A22518C2D5F500AD8F75 /* K9LogPatternComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternComponent.h; sourceTree = "<group>"; };
+		A580A22618C2D5F500AD8F75 /* K9LogPatternComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternComponent.m; sourceTree = "<group>"; };
+		A580A22718C2D5F500AD8F75 /* K9LogPatternModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternModifier.h; sourceTree = "<group>"; };
+		A580A22818C2D5F500AD8F75 /* K9LogPatternModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternModifier.m; sourceTree = "<group>"; };
+		A580A22918C2D5F500AD8F75 /* K9LogPatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternParser.h; sourceTree = "<group>"; };
+		A580A22A18C2D5F500AD8F75 /* K9LogPatternParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternParser.m; sourceTree = "<group>"; };
+		A580A22C18C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogLumberjackPatternFormatter.h; sourceTree = "<group>"; };
+		A580A22D18C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogLumberjackPatternFormatter.m; sourceTree = "<group>"; };
+		A580A23618C2D64400AD8F75 /* K9LogPatternFormatterErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternFormatterErrors.m; sourceTree = "<group>"; };
+		A580A23918C2D6CA00AD8F75 /* K9LogPatternFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternFormatter.h; sourceTree = "<group>"; };
+		A580A23D18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogLiteralTextComponentTests.m; sourceTree = "<group>"; };
+		A580A24018C4AEB000AD8F75 /* LogMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogMessage.h; sourceTree = "<group>"; };
+		A580A24118C4AEB000AD8F75 /* LogMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogMessage.m; sourceTree = "<group>"; };
+		A580A24418C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogMessagePatternComponentTests.m; sourceTree = "<group>"; };
+		A5EF2DE718B923910072971D /* iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EF2DEA18B923910072971D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A5EF2E0018B996770072971D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.xcconfig"; path = "Pods/Pods-iOS.xcconfig"; sourceTree = "<group>"; };
+		BCACFE782CAE4A30B1EC91D4 /* libPods-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A580A1E318C2B89900AD8F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A580A1E718C2B89900AD8F75 /* XCTest.framework in Frameworks */,
+				2393F91F6674428995E07007 /* libPods-OSX.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF2DE418B923910072971D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EF2E0118B996770072971D /* Foundation.framework in Frameworks */,
+				A5EF2DEB18B923910072971D /* XCTest.framework in Frameworks */,
+				3257B29894A043FDA2E595D5 /* libPods-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50F7AA418C5CBBB003B795E /* Pattern Component */ = {
+			isa = PBXGroup;
+			children = (
+				A580A23D18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m */,
+				A580A24418C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m */,
+				A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */,
+				A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */,
+			);
+			name = "Pattern Component";
+			sourceTree = "<group>";
+		};
+		A50F7AAB18C5D5B7003B795E /* Pattern Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */,
+				A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */,
+			);
+			name = "Pattern Modifier";
+			sourceTree = "<group>";
+		};
+		A50F7AB418C5F415003B795E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A50F7AAC18C5EE4C003B795E /* K9ThreadLocal.h */,
+				A50F7AB818C5FCB3003B795E /* K9ThreadLocal+Private.h */,
+				A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		A580A20418C2C2EA00AD8F75 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A580A20D18C2C30400AD8F75 /* Classes */,
+				A580A20618C2C2EA00AD8F75 /* iOS */,
+				A580A20A18C2C2EA00AD8F75 /* OSX */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A580A20618C2C2EA00AD8F75 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A580A20718C2C2EA00AD8F75 /* Info.plist */,
+				A580A20818C2C2EA00AD8F75 /* Prefix.pch */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		A580A20A18C2C2EA00AD8F75 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				A580A20B18C2C2EA00AD8F75 /* Info.plist */,
+				A580A20C18C2C2EA00AD8F75 /* Prefix.pch */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		A580A20D18C2C30400AD8F75 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A580A24018C4AEB000AD8F75 /* LogMessage.h */,
+				A580A24118C4AEB000AD8F75 /* LogMessage.m */,
+				A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */,
+				A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */,
+				A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */,
+				A50F7AA418C5CBBB003B795E /* Pattern Component */,
+				A50F7AAB18C5D5B7003B795E /* Pattern Modifier */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A580A22118C2D5F500AD8F75 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A580A22218C2D5F500AD8F75 /* Core */,
+				A580A22B18C2D5F500AD8F75 /* Lumberjack */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A580A22218C2D5F500AD8F75 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A580A23918C2D6CA00AD8F75 /* K9LogPatternFormatter.h */,
+				A580A22418C2D5F500AD8F75 /* K9LogMessage.h */,
+				A580A22318C2D5F500AD8F75 /* K9LogPatternFormatterErrors.h */,
+				A580A23618C2D64400AD8F75 /* K9LogPatternFormatterErrors.m */,
+				A580A22518C2D5F500AD8F75 /* K9LogPatternComponent.h */,
+				A580A22618C2D5F500AD8F75 /* K9LogPatternComponent.m */,
+				A50F7AB018C5F1FF003B795E /* K9LogPatternDateComponent.h */,
+				A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */,
+				A580A22718C2D5F500AD8F75 /* K9LogPatternModifier.h */,
+				A580A22818C2D5F500AD8F75 /* K9LogPatternModifier.m */,
+				A580A22918C2D5F500AD8F75 /* K9LogPatternParser.h */,
+				A580A22A18C2D5F500AD8F75 /* K9LogPatternParser.m */,
+				A50F7AB418C5F415003B795E /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A580A22B18C2D5F500AD8F75 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				A580A22C18C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.h */,
+				A580A22D18C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		A5EF2DDC18B9233F0072971D = {
+			isa = PBXGroup;
+			children = (
+				A580A22118C2D5F500AD8F75 /* Classes */,
+				A580A20418C2C2EA00AD8F75 /* Tests */,
+				A5EF2DE918B923910072971D /* Frameworks */,
+				A5EF2DE818B923910072971D /* Products */,
+				99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */,
+				A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A5EF2DE818B923910072971D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2DE718B923910072971D /* iOS.xctest */,
+				A580A1E618C2B89900AD8F75 /* OSX.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5EF2DE918B923910072971D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF2E0018B996770072971D /* Foundation.framework */,
+				A5EF2DEA18B923910072971D /* XCTest.framework */,
+				1C036EA4341A42D187BEBACE /* libPods-OSX.a */,
+				BCACFE782CAE4A30B1EC91D4 /* libPods-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A580A1E518C2B89900AD8F75 /* OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A580A1F118C2B89900AD8F75 /* Build configuration list for PBXNativeTarget "OSX" */;
+			buildPhases = (
+				3572895B59FF4E2ABBB8AB74 /* Check Pods Manifest.lock */,
+				A580A1E218C2B89900AD8F75 /* Sources */,
+				A580A1E318C2B89900AD8F75 /* Frameworks */,
+				A580A1E418C2B89900AD8F75 /* Resources */,
+				6E453C8AB58F40D7B4086BB5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSX;
+			productName = Cocoa;
+			productReference = A580A1E618C2B89900AD8F75 /* OSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5EF2DE618B923910072971D /* iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5EF2DF918B923910072971D /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildPhases = (
+				5E3FC45424EE450F834BC84B /* Check Pods Manifest.lock */,
+				A5EF2DE318B923910072971D /* Sources */,
+				A5EF2DE418B923910072971D /* Frameworks */,
+				A5EF2DE518B923910072971D /* Resources */,
+				F9BD64B0A8364DCCBB7B4C4E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOS;
+			productName = K9LumberjackPatternLogFormatter;
+			productReference = A5EF2DE718B923910072971D /* iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5EF2DDD18B9233F0072971D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = A5EF2DE018B9233F0072971D /* Build configuration list for PBXProject "K9LogPatternFormatter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A5EF2DDC18B9233F0072971D;
+			productRefGroup = A5EF2DE818B923910072971D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A580A1F818C2C04900AD8F75 /* Tests */,
+				A5EF2DE618B923910072971D /* iOS */,
+				A580A1E518C2B89900AD8F75 /* OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A580A1E418C2B89900AD8F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF2DE518B923910072971D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3572895B59FF4E2ABBB8AB74 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E3FC45424EE450F834BC84B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E453C8AB58F40D7B4086BB5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-OSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9BD64B0A8364DCCBB7B4C4E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A580A1E218C2B89900AD8F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50F7AA318C5B4C8003B795E /* K9LogLevelPatternComponentTests.m in Sources */,
+				A50F7AB318C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */,
+				A580A23518C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m in Sources */,
+				A580A23318C2D5F500AD8F75 /* K9LogPatternParser.m in Sources */,
+				A580A23F18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m in Sources */,
+				A580A24618C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m in Sources */,
+				A50F7ABE18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */,
+				A50F7AC118C61809003B795E /* K9LogPatternParserTests.m in Sources */,
+				A50F7AA718C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */,
+				A50F7AAF18C5EE4C003B795E /* K9ThreadLocal.m in Sources */,
+				A580A21018C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */,
+				A50F7AB718C5F92F003B795E /* K9ThreadLocalTests.m in Sources */,
+				A580A23818C2D64400AD8F75 /* K9LogPatternFormatterErrors.m in Sources */,
+				A580A23118C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */,
+				A580A24318C4AEB000AD8F75 /* LogMessage.m in Sources */,
+				A50F7AAA18C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */,
+				A580A22F18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF2DE318B923910072971D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50F7AA218C5B4C8003B795E /* K9LogLevelPatternComponentTests.m in Sources */,
+				A50F7AB218C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */,
+				A580A23418C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m in Sources */,
+				A580A23218C2D5F500AD8F75 /* K9LogPatternParser.m in Sources */,
+				A580A23E18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m in Sources */,
+				A580A24518C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m in Sources */,
+				A50F7ABD18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */,
+				A50F7AC018C61809003B795E /* K9LogPatternParserTests.m in Sources */,
+				A50F7AA618C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */,
+				A50F7AAE18C5EE4C003B795E /* K9ThreadLocal.m in Sources */,
+				A580A20F18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */,
+				A50F7AB618C5F92F003B795E /* K9ThreadLocalTests.m in Sources */,
+				A580A23718C2D64400AD8F75 /* K9LogPatternFormatterErrors.m in Sources */,
+				A580A23018C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */,
+				A580A24218C4AEB000AD8F75 /* LogMessage.m in Sources */,
+				A50F7AA918C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */,
+				A580A22E18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A580A1FD18C2C05F00AD8F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5EF2DE618B923910072971D /* iOS */;
+			targetProxy = A580A1FC18C2C05F00AD8F75 /* PBXContainerItemProxy */;
+		};
+		A580A1FF18C2C06200AD8F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A580A1E518C2B89900AD8F75 /* OSX */;
+			targetProxy = A580A1FE18C2C06200AD8F75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A580A1F218C2B89900AD8F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/OSX/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/OSX/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A580A1F318C2B89900AD8F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/OSX/Prefix.pch;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/OSX/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		A580A1FA18C2C04900AD8F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A580A1FB18C2C04900AD8F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A5EF2DE118B9233F0072971D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A5EF2DE218B9233F0072971D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		A5EF2DFA18B923910072971D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/iOS/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A5EF2DFB18B923910072971D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/iOS/Prefix.pch;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A580A1F118C2B89900AD8F75 /* Build configuration list for PBXNativeTarget "OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A580A1F218C2B89900AD8F75 /* Debug */,
+				A580A1F318C2B89900AD8F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A580A1F918C2C04900AD8F75 /* Build configuration list for PBXAggregateTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A580A1FA18C2C04900AD8F75 /* Debug */,
+				A580A1FB18C2C04900AD8F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EF2DE018B9233F0072971D /* Build configuration list for PBXProject "K9LogPatternFormatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF2DE118B9233F0072971D /* Debug */,
+				A5EF2DE218B9233F0072971D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EF2DF918B923910072971D /* Build configuration list for PBXNativeTarget "iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF2DFA18B923910072971D /* Debug */,
+				A5EF2DFB18B923910072971D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5EF2DDD18B9233F0072971D /* Project object */;
+}

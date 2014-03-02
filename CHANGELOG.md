@@ -1,4 +1,4 @@
-# K9LumberjackPatternLogFormatter CHANGELOG
+# CHANGELOG
 
 ## 0.1.0
 
