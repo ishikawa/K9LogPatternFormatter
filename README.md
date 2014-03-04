@@ -19,17 +19,18 @@ consoleLogger.logFormatter = [[K9LogLumberjackPatternFormatter alloc] initWithPa
 Supported patterns:
 
 * `%d{pattern}` timestamp
+  * `pattern` is `dateFormat` of `NSDateFormatter`
 * `%m` message
 * `%p` log level
 
 Min/max width modifier is also supported:
 
 * `%20m` Left pad with spaces and min width = 20
-* `%-5m` Right pad with spaces and man width = 5
-* `%.10m` max width = 10
+* `%-5m` Right pad with spaces and min width = 5
+* `%.10m` Truncate if message is longer than 10
 * `%-5.10m` Right pad with spaces and min:5, max:10
 
-For example, if the confersion pattern is `@"[%-5p] %d{'HH':'mm':'ss'} %m"`,  it would yield the output:
+For example, if the conversion pattern is `@"[%-5p] %d{HH':'mm':'ss} %m"`,  it would yield the output:
 
 ```
 [DEBUG] 00:45:20 Message1
@@ -43,7 +44,7 @@ For example, if the confersion pattern is `@"[%-5p] %d{'HH':'mm':'ss'} %m"`,  it
 
 ## Installation
 
-Podfile:
+In your Podfile
 
     pod "K9LogPatternFormatter/Core"
     pod "K9LogPatternFormatter/Lumberjack"
