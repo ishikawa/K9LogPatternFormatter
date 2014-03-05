@@ -18,8 +18,7 @@ consoleLogger.logFormatter = [[K9LogLumberjackPatternFormatter alloc] initWithPa
 
 Supported patterns:
 
-* `%d{pattern}` timestamp
-  * `pattern` is `dateFormat` of `NSDateFormatter`
+* `%d{pattern}` timestamp formatted by using `NSDateFormatter`
 * `%m` message
 * `%p` log level
 
@@ -46,8 +45,11 @@ For example, if the conversion pattern is `@"[%-5p] %d{HH':'mm':'ss} %m"`,  it w
 
 In your Podfile
 
-    pod "K9LogPatternFormatter/Core"
     pod "K9LogPatternFormatter/Lumberjack"
+
+or, you can grab core classes to writting your own formatter.
+
+    pod "K9LogPatternFormatter/Core"
 
 ## License
 
