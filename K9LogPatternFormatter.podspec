@@ -19,6 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'Lumberjack' do |lumberjack|
     lumberjack.source_files = 'Classes/Lumberjack/**/*.{h,m}'
+    lumberjack.dependency 'K9LogPatternFormatter/Core'
     lumberjack.dependency 'CocoaLumberjack'
   end
 
