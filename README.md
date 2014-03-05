@@ -45,11 +45,13 @@ For example, if the conversion pattern is `@"[%-5p] %d{HH':'mm':'ss} %m"`,  it w
 
 In your Podfile
 
-    pod "K9LogPatternFormatter/Lumberjack"
+    pod "K9LogPatternFormatter/Lumberjack",
+        :git => 'https://github.com/ishikawa/K9LogPatternFormatter.git'
 
 or, you can grab core classes to writting your own formatter.
 
-    pod "K9LogPatternFormatter/Core"
+    pod "K9LogPatternFormatter/Core",
+        :git => 'https://github.com/ishikawa/K9LogPatternFormatter.git'
 
 ## License
 
