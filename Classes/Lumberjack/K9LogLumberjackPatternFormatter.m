@@ -46,7 +46,7 @@
 
 @interface K9LogLumberjackPatternFormatter ()
 
-@property (nonatomic, readonly) NSArray *patternComponents;
+@property (nonatomic, readonly) K9LogPatternParseResult *parseResult;
 
 @end
 
@@ -73,15 +73,15 @@
     }
 
     K9LogPatternParser *parser = [[K9LogPatternParser alloc] init];
-    NSArray *components = [parser parse:pattern error:errorPtr];
+    K9LogPatternParseResult *parseResult = [parser parse:pattern error:errorPtr];
 
-    if (!components) {
+    if (!parseResult) {
         return nil;
     }
 
     if ((self = [super init])) {
-        _pattern           = [pattern copy];
-        _patternComponents = components;
+        _pattern     = [pattern copy];
+        _parseResult = parseResult;
     }
 
     return self;
@@ -91,14 +91,7 @@
 
 - (NSString *)formatLogMessage:(DDLogMessage *)logMessage
 {
-    // TODO: Extract into class (Parsed object?)
-    NSMutableString *buffer = [NSMutableString string];
-
-    for (id<K9LogPatternComponent> component in _patternComponents) {
-        [buffer appendString:[component stringFromLogMessage:logMessage]];
-    }
-
-    return buffer;
+    return [_parseResult stringFromLogMessage:logMessage];
 }
 
 @end

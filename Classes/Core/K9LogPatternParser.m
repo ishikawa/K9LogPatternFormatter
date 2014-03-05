@@ -6,7 +6,7 @@
 
 @implementation K9LogPatternParser
 
-- (NSArray *)parse:(NSString *)pattern error:(NSError **)errorPtr
+- (K9LogPatternParseResult *)parse:(NSString *)pattern error:(NSError **)errorPtr
 {
     if (!pattern) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
@@ -107,7 +107,75 @@
         }
     }
     
-    return [components copy];
+    return [[K9LogPatternParseResult alloc] initWithComponents:components];
+}
+
+@end
+
+#pragma mark - K9LogPatternParseResult
+
+@interface K9LogPatternParseResult ()
+
+@property (nonatomic, copy) NSArray *components;
+
+@end
+
+@implementation K9LogPatternParseResult
+
+- (instancetype)init
+{
+    return [self initWithComponents:@[]];
+}
+
+- (instancetype)initWithComponents:(NSArray *)components
+{
+    if ((self = [super init])) {
+        self.components = components;
+    }
+
+    return self;
+}
+
+- (NSUInteger)count
+{
+    return _components.count;
+}
+
+- (id<K9LogPatternComponent>)componentAtIndex:(NSUInteger)index
+{
+    return _components[index];
+}
+
+#pragma mark K9LogPatternComponent
+
+- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+{
+    // TODO: Extract into class (Parsed object?)
+    NSMutableString *buffer = [NSMutableString string];
+
+    for (id<K9LogPatternComponent> component in self) {
+        [buffer appendString:[component stringFromLogMessage:logMessage]];
+    }
+
+    return buffer;
+}
+
+#pragma mark Indexed Subscripting
+
+- (id<K9LogPatternComponent>)objectAtIndexedSubscript:(NSUInteger)idx
+{
+    return [_components objectAtIndexedSubscript:idx];
+}
+
+#pragma mark NSFastEnumeration
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
+                                  objects:(id __unsafe_unretained [])buffer
+                                    count:(NSUInteger)len
+{
+    return [_components countByEnumeratingWithState:state
+                                            objects:buffer
+                                              count:len];
 }
 
 @end

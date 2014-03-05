@@ -11,28 +11,29 @@
 
 @implementation K9LogPatternParserTests
 
-- (NSArray *)parseComponentsFromPattern:(NSString *)pattern
+- (K9LogPatternParseResult *)parseComponentsFromPattern:(NSString *)pattern
 {
     K9LogPatternParser *parser = [[K9LogPatternParser alloc] init];
 
     NSError *error = nil;
 
-    NSArray *components = [parser parse:pattern error:&error];
+    K9LogPatternParseResult *result = [parser parse:pattern error:&error];
 
+    XCTAssertNotNil(result, @"Pattern: %@", pattern);
     XCTAssertNil(error, @"Pattern: %@", pattern);
 
-    return components;
+    return result;
 }
 
 - (id)parseOneComponentFromPattern:(NSString *)pattern
 {
-    NSArray *components = [self parseComponentsFromPattern:pattern];
+    K9LogPatternParseResult *result = [self parseComponentsFromPattern:pattern];
 
-    XCTAssertEqual(components.count,
+    XCTAssertEqual(result.count,
                    (NSUInteger)1,
                    @"1 component: %@", pattern);
 
-    return components[0];
+    return result[0];
 }
 
 - (void)testNil
@@ -49,14 +50,14 @@
 
 - (void)testEmpty
 {
-    NSArray *components = [self parseComponentsFromPattern:@""];
+    K9LogPatternParseResult *components = [self parseComponentsFromPattern:@""];
 
-    XCTAssertEqualObjects(components, @[]);
+    XCTAssertEqual(components.count, (NSUInteger)0);
 }
 
 - (void)testLiteral
 {
-    NSArray *components = [self parseComponentsFromPattern:@"Hi"];
+    K9LogPatternParseResult *components = [self parseComponentsFromPattern:@"Hi"];
 
     XCTAssertEqual(components.count, (NSUInteger)1, @"1 component");
 
@@ -71,28 +72,28 @@
 
 - (void)testMultiplePatterns
 {
-    NSArray *components = [self parseComponentsFromPattern:@"%p %m"];
+    K9LogPatternParseResult *components = [self parseComponentsFromPattern:@"%p %m"];
 
     XCTAssertEqual(components.count, (NSUInteger)3);
 
     {
-        K9LogPatternLevelComponent *component = components[0];
+        K9LogPatternLevelComponent *component = (K9LogPatternLevelComponent *)components[0];
 
         XCTAssertTrue([component isKindOfClass:[K9LogPatternLevelComponent class]],
                       @"1st component");
     }
     {
-        K9LogPatternLiteralTextComponent *component = components[1];
+        K9LogPatternLiteralTextComponent *component = (K9LogPatternLiteralTextComponent *)components[1];
 
         XCTAssertTrue([component isKindOfClass:[K9LogPatternLiteralTextComponent class]],
-                      @"1st component");
+                      @"2nd component");
         XCTAssertEqualObjects(component.text, @" ");
     }
     {
-        K9LogPatternMessageComponent *component = components[2];
+        K9LogPatternMessageComponent *component = (K9LogPatternMessageComponent *)components[2];
 
         XCTAssertTrue([component isKindOfClass:[K9LogPatternMessageComponent class]],
-                      @"2nd component");
+                      @"3rd component");
     }
 }
 
