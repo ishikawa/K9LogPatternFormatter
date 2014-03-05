@@ -52,7 +52,6 @@
 
 @implementation K9LogLumberjackPatternFormatter
 
-// TODO: Extract initialization code into abstract class
 - (instancetype)init
 {
     return [self initWithPattern:@"%m"];
