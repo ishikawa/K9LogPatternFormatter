@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
-#import "K9LogPatternFormatter.h"
 #import "K9LogLumberjackPatternFormatter.h"
+#import "K9LogPatternParser.h"
 
 @interface K9LogLumberjackPatternFormatterTests : XCTestCase
 
@@ -75,8 +75,8 @@
 
         XCTAssertNil(formatter);
         XCTAssertNotNil(error);
-        XCTAssertEqualObjects(error.domain, K9LogPatternFormatterErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternFormatterParseError);
+        XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
+        XCTAssertEqual(error.code, K9LogPatternParserUnrecognizedPatternError);
     }
 
     // Unrecognized specifier
@@ -88,8 +88,8 @@
 
         XCTAssertNil(formatter);
         XCTAssertNotNil(error);
-        XCTAssertEqualObjects(error.domain, K9LogPatternFormatterErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternFormatterParseError);
+        XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
+        XCTAssertEqual(error.code, K9LogPatternParserUnrecognizedPatternError);
     }
 }
 

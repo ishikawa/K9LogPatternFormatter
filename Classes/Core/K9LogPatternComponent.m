@@ -29,7 +29,7 @@
 
 @end
 
-@implementation K9LogPatternParametarizedComponent
+@implementation K9LogPatternParameterizedComponent
 
 - (instancetype)init
 {

@@ -1,5 +1,4 @@
 #import <XCTest/XCTest.h>
-#import "K9LogPatternFormatter.h"
 #import "K9LogPatternParser.h"
 #import "K9LogPatternComponent.h"
 #import "K9LogPatternModifier.h"
@@ -62,7 +61,7 @@
     XCTAssertEqual(components.count, (NSUInteger)1, @"1 component");
 
     {
-        K9LogPatternLiteralTextComponent *component = components[0];
+        K9LogPatternLiteralTextComponent *component = (K9LogPatternLiteralTextComponent *)components[0];
 
         XCTAssertTrue([component isKindOfClass:[K9LogPatternLiteralTextComponent class]],
                       @"1st component");
@@ -132,8 +131,28 @@
         [parser parse:@"%d{" error:&error];
 
         XCTAssertNotNil(error);
-        XCTAssertEqualObjects(error.domain, K9LogPatternFormatterErrorDomain);
-        XCTAssertEqual(error.code, (NSInteger)K9LogPatternFormatterParseError);
+        XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
+        XCTAssertEqual(error.code, K9LogPatternParserUnclosedBraceError);
+    }
+}
+
+- (void)testComponentParametersUnsupported
+{
+    K9LogPatternParseResult *components = [self parseComponentsFromPattern:@"%m{param}"];
+
+    XCTAssertEqual(components.count, (NSUInteger)2);
+
+    XCTAssertTrue([components[0] isKindOfClass:[K9LogPatternMessageComponent class]],
+                  @"1st component");
+    XCTAssertTrue([components[1] isKindOfClass:[K9LogPatternLiteralTextComponent class]],
+                  @"2nd component");
+
+    {
+        K9LogPatternLiteralTextComponent *component = (K9LogPatternLiteralTextComponent *)components[1];
+
+        XCTAssertEqualObjects(component.text,
+                              @"{param}",
+                              @"Parameter should be treated as literal text");
     }
 }
 

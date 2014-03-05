@@ -29,3 +29,16 @@
 - (id<K9LogPatternComponent>)objectAtIndexedSubscript:(NSUInteger)idx;
 
 @end
+
+#pragma mark - Errors
+
+extern NSString *const K9LogPatternParserErrorDomain;
+
+/*
+ * -[NSError code] of K9LogPatternParserErrorDomain
+ */
+typedef NS_ENUM(NSInteger, K9LogPatternParserError) {
+    K9LogPatternParserInternalError = 1,
+    K9LogPatternParserUnrecognizedPatternError,
+    K9LogPatternParserUnclosedBraceError,
+};

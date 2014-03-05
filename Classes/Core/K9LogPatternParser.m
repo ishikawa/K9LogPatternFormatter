@@ -1,8 +1,9 @@
-#import "K9LogPatternFormatter.h"
 #import "K9LogPatternParser.h"
 #import "K9LogPatternComponent.h"
 #import "K9LogPatternDateComponent.h"
 #import "K9LogPatternModifier.h"
+
+NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorDomain";
 
 @implementation K9LogPatternParser
 
@@ -56,41 +57,47 @@
                 componentClass = [K9LogPatternDateComponent class];
             } else {
                 if (errorPtr != NULL) {
-                    *errorPtr = [NSError errorWithDomain:K9LogPatternFormatterErrorDomain
-                                                    code:K9LogPatternFormatterParseError
+                    *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
+                                                    code:K9LogPatternParserUnrecognizedPatternError
                                                 userInfo:nil];
                 }
 
                 return nil;
             }
 
-            // Parameters
-            NSMutableArray *parameters = [NSMutableArray array];
-
-            while ([scanner scanString:@"{" intoString:NULL]) {
-                NSString *param = @"";
-
-                // If first character is "}", scanUpToString:intoString: returns NO
-                [scanner scanUpToString:@"}" intoString:&param];
-
-                if ([scanner scanString:@"}" intoString:NULL]) {
-                    [parameters addObject:param];
-                } else {
-                    // Unclosed brace
-                    if (errorPtr != NULL) {
-                        *errorPtr = [NSError errorWithDomain:K9LogPatternFormatterErrorDomain
-                                                        code:K9LogPatternFormatterParseError
-                                                    userInfo:nil];
-                    }
-
-                    return nil;
-                }
-            }
+            id<K9LogPatternComponent> component = nil;
 
             NSAssert(componentClass,
                      @"Pattern specifier class should be recognized.");
 
-            id<K9LogPatternComponent> component = [[componentClass alloc] initWithParameters:parameters];
+            if ([componentClass conformsToProtocol:@protocol(K9LogPatternParameterizedComponent)]) {
+                // Parameters
+                NSMutableArray *parameters = [NSMutableArray array];
+
+                while ([scanner scanString:@"{" intoString:NULL]) {
+                    NSString *param = @"";
+
+                    // If first character is "}", scanUpToString:intoString: returns NO
+                    [scanner scanUpToString:@"}" intoString:&param];
+
+                    if ([scanner scanString:@"}" intoString:NULL]) {
+                        [parameters addObject:param];
+                    } else {
+                        // Unclosed brace
+                        if (errorPtr != NULL) {
+                            *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
+                                                            code:K9LogPatternParserUnclosedBraceError
+                                                        userInfo:nil];
+                        }
+
+                        return nil;
+                    }
+                }
+
+                component = [[componentClass alloc] initWithParameters:parameters];
+            } else {
+                component = [[componentClass alloc] init];
+            }
 
             if (minWidth >= 0) {
                 component = [[K9LogPatternMinWidthConstraint alloc] initWithComponent:component

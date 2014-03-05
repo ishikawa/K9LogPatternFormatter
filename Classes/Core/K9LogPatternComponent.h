@@ -13,9 +13,9 @@
 
 @end
 
-#pragma mark K9LogPatternParametarizedComponent
+#pragma mark K9LogPatternParameterizedComponent
 
-@protocol K9LogPatternParametarizedComponent <K9LogPatternComponent>
+@protocol K9LogPatternParameterizedComponent <K9LogPatternComponent>
 
 @required
 
@@ -25,9 +25,9 @@
 
 #pragma mark - Pattern Component Classes
 
-#pragma mark K9LogPatternParametarizedComponent
+#pragma mark K9LogPatternParameterizedComponent
 
-@interface K9LogPatternParametarizedComponent : NSObject <K9LogPatternParametarizedComponent>
+@interface K9LogPatternParameterizedComponent : NSObject <K9LogPatternParameterizedComponent>
 
 @end
 
@@ -43,13 +43,13 @@
 
 #pragma mark K9LogPatternMessageComponent
 
-@interface K9LogPatternMessageComponent : K9LogPatternParametarizedComponent
+@interface K9LogPatternMessageComponent : NSObject <K9LogPatternComponent>
 
 @end
 
 #pragma mark K9LogPatternLevelComponent
 
-@interface K9LogPatternLevelComponent : K9LogPatternParametarizedComponent
+@interface K9LogPatternLevelComponent : NSObject <K9LogPatternComponent>
 
 @end
 
