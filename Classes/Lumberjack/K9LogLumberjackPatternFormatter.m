@@ -10,12 +10,12 @@
 
 @implementation DDLogMessage (K9LogMessage)
 
-- (NSString *)k9_logMessageText
+- (NSString *)k9_messageText
 {
     return self->logMsg;
 }
 
-- (K9LogMessageLevel)k9_logMessageLevel
+- (K9LogMessageLevel)k9_logLevel
 {
     const NSInteger level = self->logFlag;
 
@@ -35,9 +35,28 @@
     }
 }
 
-- (NSDate *)k9_logTimestamp
+- (NSDate *)k9_timestamp
 {
     return self->timestamp;
+}
+
+- (NSString *)k9_fileName
+{
+    return [self fileName];
+}
+
+- (NSString *)k9_filePath
+{
+    // __FILE__ is a C string leteral, so NoCopy is sufficient.
+    return [[NSString alloc] initWithBytesNoCopy:self->file
+                                          length:strlen(self->file)
+                                        encoding:NSUTF8StringEncoding
+                                    freeWhenDone:NO];
+}
+
+- (NSInteger)k9_lineNumber
+{
+    return self->lineNumber;
 }
 
 @end

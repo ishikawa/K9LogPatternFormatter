@@ -40,6 +40,12 @@
 		A50F7ABE18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */; };
 		A50F7AC018C61809003B795E /* K9LogPatternParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */; };
 		A50F7AC118C61809003B795E /* K9LogPatternParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */; };
+		A52CE92318C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE92218C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m */; };
+		A52CE92418C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE92218C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m */; };
+		A52CE92618C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE92518C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m */; };
+		A52CE92718C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE92518C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m */; };
+		A52CE92918C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE92818C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m */; };
+		A52CE92A18C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE92818C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m */; };
 		A580A1E718C2B89900AD8F75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2DEA18B923910072971D /* XCTest.framework */; };
 		A580A20F18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */; };
 		A580A21018C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */; };
@@ -92,6 +98,9 @@
 		A50F7AB818C5FCB3003B795E /* K9ThreadLocal+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "K9ThreadLocal+Private.h"; sourceTree = "<group>"; };
 		A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogDatePatternComponentTests.m; sourceTree = "<group>"; };
 		A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternParserTests.m; sourceTree = "<group>"; };
+		A52CE92218C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternFilePathComponentTests.m; sourceTree = "<group>"; };
+		A52CE92518C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternLineNumberComponentTests.m; sourceTree = "<group>"; };
+		A52CE92818C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternFileNameComponentTests.m; sourceTree = "<group>"; };
 		A580A1E618C2B89900AD8F75 /* OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A580A20718C2C2EA00AD8F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A580A20818C2C2EA00AD8F75 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -148,6 +157,9 @@
 				A580A24418C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m */,
 				A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */,
 				A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */,
+				A52CE92818C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m */,
+				A52CE92218C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m */,
+				A52CE92518C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m */,
 			);
 			name = "Pattern Component";
 			sourceTree = "<group>";
@@ -439,15 +451,18 @@
 				A580A23318C2D5F500AD8F75 /* K9LogPatternParser.m in Sources */,
 				A580A23F18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m in Sources */,
 				A580A24618C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m in Sources */,
+				A52CE92A18C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m in Sources */,
 				A50F7ABE18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */,
 				A50F7AC118C61809003B795E /* K9LogPatternParserTests.m in Sources */,
 				A50F7AA718C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */,
 				A50F7AAF18C5EE4C003B795E /* K9ThreadLocal.m in Sources */,
 				A580A21018C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */,
 				A50F7AB718C5F92F003B795E /* K9ThreadLocalTests.m in Sources */,
+				A52CE92418C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m in Sources */,
 				A580A23118C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */,
 				A580A24318C4AEB000AD8F75 /* LogMessage.m in Sources */,
 				A50F7AAA18C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */,
+				A52CE92718C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m in Sources */,
 				A580A22F18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,15 +477,18 @@
 				A580A23218C2D5F500AD8F75 /* K9LogPatternParser.m in Sources */,
 				A580A23E18C4A1EC00AD8F75 /* K9LogLiteralTextComponentTests.m in Sources */,
 				A580A24518C4B9BE00AD8F75 /* K9LogMessagePatternComponentTests.m in Sources */,
+				A52CE92918C8B5B5000D2670 /* K9LogPatternFileNameComponentTests.m in Sources */,
 				A50F7ABD18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */,
 				A50F7AC018C61809003B795E /* K9LogPatternParserTests.m in Sources */,
 				A50F7AA618C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */,
 				A50F7AAE18C5EE4C003B795E /* K9ThreadLocal.m in Sources */,
 				A580A20F18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */,
 				A50F7AB618C5F92F003B795E /* K9ThreadLocalTests.m in Sources */,
+				A52CE92318C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m in Sources */,
 				A580A23018C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */,
 				A580A24218C4AEB000AD8F75 /* LogMessage.m in Sources */,
 				A50F7AA918C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */,
+				A52CE92618C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m in Sources */,
 				A580A22E18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

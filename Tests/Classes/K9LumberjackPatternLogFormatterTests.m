@@ -6,32 +6,83 @@
 
 @end
 
-@interface K9LogLumberjackPatternFormatterTests (DDLogMessageAssertion)
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                                 flag:(int)flag
-                            timestamp:(NSDate *)timestamp
-                      expectedMessage:(NSString *)format
-                            arguments:(va_list)arguments;
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                                 flag:(int)flag
-                      expectedMessage:(NSString *)format, ...;
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                      expectedMessage:(NSString *)expectedMessage, ...;
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                            timestamp:(NSDate *)timestamp
-                      expectedMessage:(NSString *)expectedMessage, ...;
-
-@end
-
 @implementation K9LogLumberjackPatternFormatterTests
+
+#pragma mark - Formatting Helpers
+
+- (NSString *)formatLogMessageWithPattern:(NSString *)pattern
+                                     file:(NSString *)file
+                                     line:(int)line
+{
+    return [self formatLogMessageWithPattern:pattern
+                                     message:@""
+                                        flag:LOG_FLAG_VERBOSE
+                                        file:file
+                                        line:line
+                                   timestamp:[NSDate date]];
+}
+
+- (NSString *)formatLogMessageWithPattern:(NSString *)pattern
+                                  message:(NSString *)message
+{
+    return [self formatLogMessageWithPattern:pattern
+                                     message:message
+                                        flag:LOG_FLAG_VERBOSE
+                                        file:@"test.m"
+                                        line:1
+                                   timestamp:[NSDate date]];
+}
+
+- (NSString *)formatLogMessageWithPattern:(NSString *)pattern
+                                  message:(NSString *)message
+                                     flag:(int)flag
+{
+    return [self formatLogMessageWithPattern:pattern
+                                     message:message
+                                        flag:flag
+                                        file:@"test.m"
+                                        line:1
+                                   timestamp:[NSDate date]];
+}
+
+- (NSString *)formatLogMessageWithPattern:(NSString *)pattern
+                                timestamp:(NSDate *)timestamp
+{
+    return [self formatLogMessageWithPattern:pattern
+                                     message:@""
+                                        flag:LOG_FLAG_VERBOSE
+                                        file:@"test.m"
+                                        line:1
+                                   timestamp:timestamp];
+}
+
+- (NSString *)formatLogMessageWithPattern:(NSString *)pattern
+                                  message:(NSString *)message
+                                     flag:(int)flag
+                                     file:(NSString *)file
+                                     line:(int)line
+                                timestamp:(NSDate *)timestamp
+{
+    K9LogLumberjackPatternFormatter *formatter = [[K9LogLumberjackPatternFormatter alloc] initWithPattern:pattern error:NULL];
+
+    XCTAssertNotNil(formatter, @"formatter for %@", pattern);
+
+    DDLogMessage *logMessage = [[DDLogMessage alloc] initWithLogMsg:message
+                                                              level:LOG_LEVEL_VERBOSE
+                                                               flag:flag
+                                                            context:0
+                                                               file:[file UTF8String]
+                                                           function:__PRETTY_FUNCTION__
+                                                               line:line
+                                                                tag:nil
+                                                            options:0];
+
+    if (timestamp) {
+        logMessage->timestamp = timestamp;
+    }
+
+    return [formatter formatLogMessage:logMessage];
+}
 
 #pragma mark Initialization
 
@@ -95,28 +146,38 @@
 
 - (void)testFormatLogMessage_empty
 {
-    [self assertFormattedLogWithPattern:@""
-                                message:@""
-                        expectedMessage:@""];
+    {
+        NSString *text = [self formatLogMessageWithPattern:@""
+                                                   message:@""];
+        XCTAssertEqualObjects(text, @"");
+    }
 
-    [self assertFormattedLogWithPattern:@""
-                                message:@"Hi"
-                        expectedMessage:@""];
+    {
+        NSString *text = [self formatLogMessageWithPattern:@""
+                                                   message:@"Hi"];
+        XCTAssertEqualObjects(text, @"");
+    }
 }
 
 - (void)testFormatLogMessage_message
 {
-    [self assertFormattedLogWithPattern:@"%m"
-                                message:@""
-                        expectedMessage:@""];
+    {
+        NSString *text = [self formatLogMessageWithPattern:@"%m"
+                                                   message:@""];
+        XCTAssertEqualObjects(text, @"");
+    }
 
-    [self assertFormattedLogWithPattern:@"%m"
-                                message:@"Hi"
-                        expectedMessage:@"Hi"];
+    {
+        NSString *text = [self formatLogMessageWithPattern:@"%m"
+                                                   message:@"Hi"];
+        XCTAssertEqualObjects(text, @"Hi");
+    }
 
-    [self assertFormattedLogWithPattern:@"Hello, %m!"
-                                message:@"World"
-                        expectedMessage:@"Hello, World!"];
+    {
+        NSString *text = [self formatLogMessageWithPattern:@"Hello, %m!"
+                                                   message:@"World"];
+        XCTAssertEqualObjects(text, @"Hello, World!");
+    }
 }
 
 - (void)testFormatLogMessage_logLevel
@@ -131,10 +192,11 @@
                                     };
 
     [stringByLevel enumerateKeysAndObjectsUsingBlock:^(NSNumber *flag, NSString *label, BOOL *stop) {
-        [self assertFormattedLogWithPattern:@"[%p] %m"
-                                    message:@"MESSAGE"
-                                       flag:[flag intValue]
-                            expectedMessage:@"[%@] MESSAGE", label];
+        NSString *text = [self formatLogMessageWithPattern:@"[%p] %m"
+                                                   message:@"MESSAGE"
+                                                      flag:[flag intValue]];
+        NSString *expectation = [NSString stringWithFormat:@"[%@] MESSAGE", label];
+        XCTAssertEqualObjects(text, expectation);
     }];
 }
 
@@ -150,20 +212,51 @@
     {
         NSDate *date = [formatter dateFromString:@"2014-03-01 10:20:30"];
 
-        [self assertFormattedLogWithPattern:@"%d"
-                                    message:@""
-                                  timestamp:date
-                            expectedMessage:@"2014-03-01 10:20:30,000"];
+        NSString *text = [self formatLogMessageWithPattern:@"%d"
+                                                 timestamp:date];
+
+        XCTAssertEqualObjects(text, @"2014-03-01 10:20:30,000");
     }
 
     // %d
     {
         NSDate *date = [formatter dateFromString:@"2014-03-01 10:20:30"];
 
-        [self assertFormattedLogWithPattern:@"%d{yyyy}"
-                                    message:@""
-                                  timestamp:date
-                            expectedMessage:@"2014"];
+        NSString *text = [self formatLogMessageWithPattern:@"%d{yyyy}"
+                                                 timestamp:date];
+
+        XCTAssertEqualObjects(text, @"2014");
+    }
+}
+
+- (void)testFormatLogMessage_fileAndLineNumber
+{
+    {
+        NSString *message = [self formatLogMessageWithPattern:@"%l"
+                                                         file:@"Classes/Foo.m"
+                                                         line:1];
+        XCTAssertEqualObjects(message, @"Classes/Foo.m");
+    }
+
+    {
+        NSString *message = [self formatLogMessageWithPattern:@"%F"
+                                                         file:@"Classes/Foo.m"
+                                                         line:1];
+        XCTAssertEqualObjects(message, @"Foo");
+    }
+
+    {
+        NSString *message = [self formatLogMessageWithPattern:@"%L"
+                                                         file:@"Classes/Foo.m"
+                                                         line:10];
+        XCTAssertEqualObjects(message, @"10");
+    }
+
+    {
+        NSString *message = [self formatLogMessageWithPattern:@"%F:%L"
+                                                         file:@"Classes/Bar.m"
+                                                         line:15];
+        XCTAssertEqualObjects(message, @"Bar:15");
     }
 }
 
@@ -171,163 +264,96 @@
 {
     // Zero
     {
-        [self assertFormattedLogWithPattern:@"%-0m"
-                                    message:@"Message"
-                            expectedMessage:@"Message"];
-
-        [self assertFormattedLogWithPattern:@"%0m"
-                                    message:@"Message"
-                            expectedMessage:@"Message"];
-
-        [self assertFormattedLogWithPattern:@"%-0.0m"
-                                    message:@"Message"
-                            expectedMessage:@""];
-        [self assertFormattedLogWithPattern:@"%0.0m"
-                                    message:@"Message"
-                            expectedMessage:@""];
-
-        [self assertFormattedLogWithPattern:@"%.0m"
-                                    message:@"Message"
-                            expectedMessage:@""];
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-0m"
+                                                       message:@"Message"];
+            XCTAssertEqualObjects(text, @"Message");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%0m"
+                                                       message:@"Message"];
+            XCTAssertEqualObjects(text, @"Message");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-0.0m"
+                                                       message:@"Message"];
+            XCTAssertEqualObjects(text, @"");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%0.0m"
+                                                       message:@"Message"];
+            XCTAssertEqualObjects(text, @"");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%.0m"
+                                                       message:@"Message"];
+            XCTAssertEqualObjects(text, @"");
+        }
     }
 
     // %-5p
     {
-        [self assertFormattedLogWithPattern:@"%-5p %m"
-                                    message:@"Message"
-                                       flag:LOG_FLAG_DEBUG
-                            expectedMessage:@"DEBUG Message"];
-        [self assertFormattedLogWithPattern:@"%-5p %m"
-                                    message:@"Message"
-                                       flag:LOG_FLAG_WARN
-                            expectedMessage:@"WARN  Message"];
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-5p %m"
+                                                       message:@"Message"
+                                                          flag:LOG_FLAG_DEBUG];
+            XCTAssertEqualObjects(text, @"DEBUG Message");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-5p %m"
+                                                       message:@"Message"
+                                                          flag:LOG_FLAG_WARN];
+            XCTAssertEqualObjects(text, @"WARN  Message");
+        }
     }
 
     // Blank message
     {
-        [self assertFormattedLogWithPattern:@"%5m"
-                                    message:@""
-                            expectedMessage:@"     "];
-        [self assertFormattedLogWithPattern:@"%-5m"
-                                    message:@""
-                            expectedMessage:@"     "];
-        [self assertFormattedLogWithPattern:@"%-5m"
-                                    message:@" "
-                            expectedMessage:@"     "];
-        [self assertFormattedLogWithPattern:@"%5m"
-                                    message:@" "
-                            expectedMessage:@"     "];
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%5m"
+                                                       message:@""];
+            XCTAssertEqualObjects(text, @"     ");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-5m"
+                                                       message:@""];
+            XCTAssertEqualObjects(text, @"     ");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%5m"
+                                                       message:@" "];
+            XCTAssertEqualObjects(text, @"     ");
+        }
     }
 
     // Min and Max
     {
-        [self assertFormattedLogWithPattern:@"%5.10m"
-                                    message:@""
-                            expectedMessage:@"     "];
-        [self assertFormattedLogWithPattern:@"%5.10m"
-                                    message:@"A"
-                            expectedMessage:@"    A"];
-        [self assertFormattedLogWithPattern:@"%-5.10m"
-                                    message:@"A"
-                            expectedMessage:@"A    "];
-        [self assertFormattedLogWithPattern:@"%-5.10m"
-                                    message:@"0123456789"
-                            expectedMessage:@"0123456789"];
-        [self assertFormattedLogWithPattern:@"%-5.10m"
-                                    message:@"0123456789A"
-                            expectedMessage:@"0123456789"];
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%5.10m"
+                                                       message:@""];
+            XCTAssertEqualObjects(text, @"     ");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%5.10m"
+                                                       message:@"A"];
+            XCTAssertEqualObjects(text, @"    A");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-5.10m"
+                                                       message:@"A"];
+            XCTAssertEqualObjects(text, @"A    ");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-5.10m"
+                                                       message:@"0123456789"];
+            XCTAssertEqualObjects(text, @"0123456789");
+        }
+        {
+            NSString *text = [self formatLogMessageWithPattern:@"%-5.10m"
+                                                       message:@"0123456789A"];
+            XCTAssertEqualObjects(text, @"0123456789");
+        }
     }
-}
-
-@end
-
-
-@implementation K9LogLumberjackPatternFormatterTests (DDLogMessageAssertion)
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                                 flag:(int)flag
-                            timestamp:(NSDate *)timestamp
-                      expectedMessage:(NSString *)format
-                            arguments:(va_list)arguments
-{
-    K9LogLumberjackPatternFormatter *formatter = [[K9LogLumberjackPatternFormatter alloc] initWithPattern:pattern error:NULL];
-
-    DDLogMessage *logMessage = [[DDLogMessage alloc] initWithLogMsg:message
-                                                              level:LOG_LEVEL_VERBOSE
-                                                               flag:flag
-                                                            context:0
-                                                               file:__FILE__
-                                                           function:__PRETTY_FUNCTION__
-                                                               line:__LINE__
-                                                                tag:nil
-                                                            options:0];
-
-    if (timestamp) {
-        logMessage->timestamp = timestamp;
-    }
-
-    NSString *expectedMessage = [[NSString alloc] initWithFormat:format
-                                                       arguments:arguments];
-
-    XCTAssertEqualObjects([formatter formatLogMessage:logMessage],
-                          expectedMessage,
-                          @"Given \"%@\" with format \"%@\"",
-                          message,
-                          pattern);
-}
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                                 flag:(int)flag
-                      expectedMessage:(NSString *)format, ...
-{
-    va_list arguments;
-
-    va_start(arguments, format);
-
-    [self assertFormattedLogWithPattern:pattern
-                                message:message
-                                   flag:flag
-                              timestamp:nil
-                        expectedMessage:format
-                              arguments:arguments];
-    va_end(arguments);
-}
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                      expectedMessage:(NSString *)format, ...
-{
-    va_list arguments;
-
-    va_start(arguments, format);
-
-    [self assertFormattedLogWithPattern:pattern
-                                message:message
-                                   flag:LOG_FLAG_VERBOSE
-                              timestamp:nil
-                        expectedMessage:format
-                              arguments:arguments];
-    va_end(arguments);
-}
-
-- (void)assertFormattedLogWithPattern:(NSString *)pattern
-                              message:(NSString *)message
-                            timestamp:(NSDate *)timestamp
-                      expectedMessage:(NSString *)format, ...
-{
-    va_list arguments;
-
-    va_start(arguments, format);
-
-    [self assertFormattedLogWithPattern:pattern
-                                message:message
-                                   flag:LOG_FLAG_VERBOSE
-                              timestamp:timestamp
-                        expectedMessage:format
-                              arguments:arguments];
-    va_end(arguments);
 }
 
 @end

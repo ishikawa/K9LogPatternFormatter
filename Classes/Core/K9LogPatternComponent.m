@@ -50,20 +50,24 @@
 
 @end
 
+#pragma mark K9LogPatternMessageComponent
+
 @implementation K9LogPatternMessageComponent
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    return [logMessage k9_logMessageText];
+    return [logMessage k9_messageText];
 }
 
 @end
+
+#pragma mark K9LogPatternLevelComponent
 
 @implementation K9LogPatternLevelComponent
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    switch ([logMessage k9_logMessageLevel]) {
+    switch ([logMessage k9_logLevel]) {
         case K9LogMessageLevelVerbose:
             return @"VERBOSE";
         case K9LogMessageLevelDebug:
@@ -77,6 +81,39 @@
         default:
             return @"CUSTOM";
     }
+}
+
+@end
+
+#pragma mark K9LogPatternFileNameComponent
+
+@implementation K9LogPatternFileNameComponent
+
+- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+{
+    return [logMessage k9_fileName];
+}
+
+@end
+
+#pragma mark K9LogPatternFilePathComponent
+
+@implementation K9LogPatternFilePathComponent
+
+- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+{
+    return [logMessage k9_filePath];
+}
+
+@end
+
+#pragma mark K9LogPatternLineNumberComponent
+
+@implementation K9LogPatternLineNumberComponent
+
+- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+{
+    return [NSString stringWithFormat:@"%ld", (long)[logMessage k9_lineNumber]];
 }
 
 @end

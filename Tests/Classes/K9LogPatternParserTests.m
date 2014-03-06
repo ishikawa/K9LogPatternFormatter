@@ -69,6 +69,23 @@
     }
 }
 
+- (void)testPatternMapping
+{
+    NSDictionary *klassByPattern = @{
+                                     @"%m": [K9LogPatternMessageComponent class],
+                                     @"%p": [K9LogPatternLevelComponent class],
+                                     @"%F": [K9LogPatternFileNameComponent class],
+                                     @"%l": [K9LogPatternFilePathComponent class],
+                                     @"%L": [K9LogPatternLineNumberComponent class],
+                                     };
+
+    [klassByPattern enumerateKeysAndObjectsUsingBlock:^(NSString *pattern, Class klass, BOOL *stop) {
+        id component = [self parseOneComponentFromPattern:pattern];
+
+        XCTAssertTrue([component isKindOfClass:klass], @"pattern: %@", pattern);
+    }];
+}
+
 - (void)testMultiplePatterns
 {
     K9LogPatternParseResult *components = [self parseComponentsFromPattern:@"%p %m"];

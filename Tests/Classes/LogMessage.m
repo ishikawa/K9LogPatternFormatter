@@ -8,24 +8,40 @@
         _text      = @"";
         _level     = K9LogMessageLevelVerbose;
         _timestamp = [NSDate date];
+        _fileName  = @"";
+        _filePath  = @"";
     }
     return self;
 }
 
-- (NSString *)k9_logMessageText
+- (NSString *)k9_messageText
 {
     return self.text;
 }
 
-- (K9LogMessageLevel)k9_logMessageLevel
+- (K9LogMessageLevel)k9_logLevel
 {
     return self.level;
 }
 
-- (NSDate *)k9_logTimestamp
+- (NSDate *)k9_timestamp
 {
     return self.timestamp;
 }
 
-@end
+- (NSString *)k9_fileName
+{
+    return self.fileName;
+}
 
+- (NSString *)k9_filePath
+{
+    return self.filePath;
+}
+
+- (NSInteger)k9_lineNumber
+{
+    return self.lineNumber;
+}
+
+@end

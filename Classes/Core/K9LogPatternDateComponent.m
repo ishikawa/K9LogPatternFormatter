@@ -82,7 +82,7 @@
 {
     NSDateFormatter *dateFormatter = [self dateFormatter];
 
-    return [dateFormatter stringFromDate:[logMessage k9_logTimestamp]];
+    return [dateFormatter stringFromDate:[logMessage k9_timestamp]];
 }
 
 @end

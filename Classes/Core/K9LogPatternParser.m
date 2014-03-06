@@ -55,6 +55,12 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
                 componentClass = [K9LogPatternLevelComponent class];
             } else if ([scanner scanString:@"d" intoString:NULL]) {
                 componentClass = [K9LogPatternDateComponent class];
+            } else if ([scanner scanString:@"F" intoString:NULL]) {
+                componentClass = [K9LogPatternFileNameComponent class];
+            } else if ([scanner scanString:@"l" intoString:NULL]) {
+                componentClass = [K9LogPatternFilePathComponent class];
+            } else if ([scanner scanString:@"L" intoString:NULL]) {
+                componentClass = [K9LogPatternLineNumberComponent class];
             } else {
                 if (errorPtr != NULL) {
                     *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
