@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name     = 'K9LogPatternFormatter'
-  spec.version  = '0.1.1'
+  spec.version  = '0.2.0'
   spec.summary  = 'K9LogPatternFormatter is flexible logging message formatter configurable with pattern string'
   spec.homepage = 'https://github.com/ishikawa/K9LogPatternFormatter'
   spec.license  = 'MIT'
