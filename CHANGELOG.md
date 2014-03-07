@@ -2,6 +2,12 @@
 
 **IMPORTANT: Version 0.y.z is for initial develpment. Anything may change at any time. The public API should not be considered stable.**
 
+## 0.3.0
+
+* Remove k9_fileName from K9LogMessage protocol
+* Implement fileName manipulation in K9LogPatternFileNameComponent
+* Change return type of k9_filePath
+
 ## 0.2.0
 
 * Change return type of `[K9LogPatternParser parse:error:]`
