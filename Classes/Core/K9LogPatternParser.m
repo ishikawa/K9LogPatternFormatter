@@ -1,6 +1,7 @@
 #import "K9LogPatternParser.h"
 #import "K9LogPatternComponent.h"
 #import "K9LogPatternDateComponent.h"
+#import "K9LogPatternFileNameComponent.h"
 #import "K9LogPatternModifier.h"
 
 NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorDomain";

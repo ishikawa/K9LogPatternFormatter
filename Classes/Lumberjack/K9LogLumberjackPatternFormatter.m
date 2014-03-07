@@ -40,18 +40,9 @@
     return self->timestamp;
 }
 
-- (NSString *)k9_fileName
+- (const char *)k9_filePath
 {
-    return [self fileName];
-}
-
-- (NSString *)k9_filePath
-{
-    // __FILE__ is a C string leteral, so NoCopy is sufficient.
-    return [[NSString alloc] initWithBytesNoCopy:self->file
-                                          length:strlen(self->file)
-                                        encoding:NSUTF8StringEncoding
-                                    freeWhenDone:NO];
+    return self->file;
 }
 
 - (NSInteger)k9_lineNumber

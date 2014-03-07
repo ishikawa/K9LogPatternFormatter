@@ -85,24 +85,22 @@
 
 @end
 
-#pragma mark K9LogPatternFileNameComponent
-
-@implementation K9LogPatternFileNameComponent
-
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
-{
-    return [logMessage k9_fileName];
-}
-
-@end
-
 #pragma mark K9LogPatternFilePathComponent
 
 @implementation K9LogPatternFilePathComponent
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    return [logMessage k9_filePath];
+    const char *filePath = [logMessage k9_filePath];
+
+    if (!filePath) {
+        return nil;
+    }
+
+    return [[NSString alloc] initWithBytesNoCopy:(char *)filePath
+                                          length:strlen(filePath)
+                                        encoding:NSUTF8StringEncoding
+                                    freeWhenDone:NO];
 }
 
 @end

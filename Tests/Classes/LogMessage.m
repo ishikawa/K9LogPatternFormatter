@@ -8,7 +8,6 @@
         _text      = @"";
         _level     = K9LogMessageLevelVerbose;
         _timestamp = [NSDate date];
-        _fileName  = @"";
         _filePath  = @"";
     }
     return self;
@@ -29,14 +28,9 @@
     return self.timestamp;
 }
 
-- (NSString *)k9_fileName
+- (const char *)k9_filePath
 {
-    return self.fileName;
-}
-
-- (NSString *)k9_filePath
-{
-    return self.filePath;
+    return [self.filePath UTF8String];
 }
 
 - (NSInteger)k9_lineNumber
