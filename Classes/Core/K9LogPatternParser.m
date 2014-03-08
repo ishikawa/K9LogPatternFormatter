@@ -164,7 +164,6 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    // TODO: Extract into class (Parsed object?)
     NSMutableString *buffer = [NSMutableString string];
 
     for (id<K9LogPatternComponent> component in self) {
