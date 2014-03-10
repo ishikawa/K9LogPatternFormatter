@@ -8,5 +8,6 @@
 @property (nonatomic) NSDate            *timestamp;
 @property (nonatomic) NSString          *filePath;
 @property (nonatomic) NSInteger          lineNumber;
+@property (nonatomic) NSString          *methodName;
 
 @end

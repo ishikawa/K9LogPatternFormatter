@@ -65,4 +65,10 @@
 
 @end
 
+#pragma mark K9LogPatternMethodNameComponent
+
+@interface K9LogPatternMethodNameComponent : NSObject <K9LogPatternComponent>
+
+@end
+
 // TODO: Add more convertion specifiers

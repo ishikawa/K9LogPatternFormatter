@@ -38,4 +38,9 @@
     return self.lineNumber;
 }
 
+- (const char *)k9_methodName
+{
+    return [self.methodName UTF8String];
+}
+
 @end

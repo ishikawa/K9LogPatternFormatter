@@ -78,6 +78,7 @@
                                      @"%F": [K9LogPatternFileNameComponent class],
                                      @"%l": [K9LogPatternFilePathComponent class],
                                      @"%L": [K9LogPatternLineNumberComponent class],
+                                     @"%M": [K9LogPatternMethodNameComponent class],
                                      };
 
     [klassByPattern enumerateKeysAndObjectsUsingBlock:^(NSString *pattern, Class klass, BOOL *stop) {

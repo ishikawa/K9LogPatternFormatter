@@ -21,4 +21,6 @@ typedef NS_ENUM(NSInteger, K9LogMessageLevel) {
 
 - (NSInteger)k9_lineNumber;
 
+- (const char *)k9_methodName;
+
 @end

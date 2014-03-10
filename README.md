@@ -24,6 +24,7 @@ Supported patterns:
 * `%F` file name without extension
 * `%l` file path
 * `%L` line number
+* `%M` function or method name
 
 Min/max width modifier is also supported:
 

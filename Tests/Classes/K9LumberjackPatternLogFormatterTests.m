@@ -11,6 +11,18 @@
 #pragma mark - Formatting Helpers
 
 - (NSString *)formatLogMessageWithPattern:(NSString *)pattern
+                               methodName:(NSString *)methodName
+{
+    return [self formatLogMessageWithPattern:pattern
+                                     message:@""
+                                        flag:LOG_FLAG_VERBOSE
+                                        file:@"test.m"
+                                        line:1
+                                  methodName:methodName
+                                   timestamp:[NSDate date]];
+}
+
+- (NSString *)formatLogMessageWithPattern:(NSString *)pattern
                                      file:(NSString *)file
                                      line:(int)line
 {
@@ -19,6 +31,7 @@
                                         flag:LOG_FLAG_VERBOSE
                                         file:file
                                         line:line
+                                  methodName:@""
                                    timestamp:[NSDate date]];
 }
 
@@ -30,6 +43,7 @@
                                         flag:LOG_FLAG_VERBOSE
                                         file:@"test.m"
                                         line:1
+                                  methodName:@""
                                    timestamp:[NSDate date]];
 }
 
@@ -42,6 +56,7 @@
                                         flag:flag
                                         file:@"test.m"
                                         line:1
+                                  methodName:@""
                                    timestamp:[NSDate date]];
 }
 
@@ -53,6 +68,7 @@
                                         flag:LOG_FLAG_VERBOSE
                                         file:@"test.m"
                                         line:1
+                                  methodName:@""
                                    timestamp:timestamp];
 }
 
@@ -61,6 +77,7 @@
                                      flag:(int)flag
                                      file:(NSString *)file
                                      line:(int)line
+                               methodName:(NSString *)methodName
                                 timestamp:(NSDate *)timestamp
 {
     K9LogLumberjackPatternFormatter *formatter = [[K9LogLumberjackPatternFormatter alloc] initWithPattern:pattern error:NULL];
@@ -72,7 +89,7 @@
                                                                flag:flag
                                                             context:0
                                                                file:[file UTF8String]
-                                                           function:__PRETTY_FUNCTION__
+                                                           function:[methodName UTF8String]
                                                                line:line
                                                                 tag:nil
                                                             options:0];
@@ -257,6 +274,21 @@
                                                          file:@"Classes/Bar.m"
                                                          line:15];
         XCTAssertEqualObjects(message, @"Bar:15");
+    }
+}
+
+- (void)testFormatLogMessage_methodName
+{
+    {
+        NSString *message = [self formatLogMessageWithPattern:@"%M"
+                                                   methodName:@""];
+        XCTAssertEqualObjects(message, @"");
+    }
+
+    {
+        NSString *message = [self formatLogMessageWithPattern:@"%M"
+                                                   methodName:@"A"];
+        XCTAssertEqualObjects(message, @"A");
     }
 }
 
