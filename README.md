@@ -21,7 +21,7 @@ Supported patterns:
 * `%d{pattern}` timestamp formatted by using `NSDateFormatter`
 * `%m` message
 * `%p` log level
-* `%F` file name
+* `%F` file name without extension
 * `%l` file path
 * `%L` line number
 
