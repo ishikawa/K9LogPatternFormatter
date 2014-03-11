@@ -19,6 +19,10 @@ consoleLogger.logFormatter = [[K9LogLumberjackPatternFormatter alloc] initWithPa
 Supported patterns:
 
 * `%d{pattern}` timestamp formatted by using `NSDateFormatter`
+    * `%d{HH':'mm':'ss}` prints `14:34:02`
+    * Threre are some predefined formats:
+        1. `%d{ISO8601}` prints `2014-03-12 14:34:02,781`
+    * If no format is given, `ISO8601` is used.
 * `%m` message
 * `%p` log level
 * `%F` file name without extension
@@ -38,6 +42,13 @@ For example, if the conversion pattern is `@"[%-5p] %d{HH':'mm':'ss} %m"`,  it w
 ```
 [DEBUG] 00:45:20 Message1
 [WARN ] 00:45:21 Message2
+```
+
+`@"%.1p: %m at %F:%L"` would yield:
+
+```
+D: Message1 at File1:15
+W: Message2 at File2:32
 ```
 
 ## Requirements
