@@ -22,6 +22,7 @@ Supported patterns:
     * `%d{HH':'mm':'ss}` prints `14:34:02`
     * Threre are some predefined formats:
         1. `%d{ISO8601}` prints `2014-03-12 14:34:02,781`
+        2. `%d{ISO8601_BASIC}` prints `20140312 143402,781`
     * If no format is given, `ISO8601` is used.
 * `%m` message
 * `%p` log level

@@ -70,6 +70,25 @@
     [self validateISO8601FormatWithComponent:component];
 }
 
+- (void)testISO8601_BASIC
+{
+    K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"ISO8601_BASIC"];
+
+    XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601_BASIC");
+
+    NSDateFormatter *formatter = [self ISO8601DateFormatterWithTimeZone:component.timeZone];
+
+    LogMessage *message = [[LogMessage alloc] init];
+
+    NSDate *timestamp = [formatter dateFromString:@"2014-02-01 01:20:30"];
+
+    message.timestamp = [timestamp dateByAddingTimeInterval:0.5];
+
+    XCTAssertEqualObjects([component stringFromLogMessage:message],
+                          @"20140201 012030,500",
+                          @"ISO8601_BASIC");
+}
+
 - (void)testFormatEmpty
 {
     LogMessage *message = [[LogMessage alloc] init];
