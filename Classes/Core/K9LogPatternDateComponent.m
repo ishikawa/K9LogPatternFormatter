@@ -31,6 +31,8 @@
         formatter.dateFormat = @"yyyy'-'MM'-'dd' 'HH':'mm':'ss','SSS";
     } else if ([nameOfFormat isEqualToString:@"ISO8601_BASIC"]) {
         formatter.dateFormat = @"yyyyMMdd' 'HHmmss','SSS";
+    } else if ([nameOfFormat isEqualToString:@"ABSOLUTE"]) {
+        formatter.dateFormat = @"HHmmss','SSS";
     } else {
         formatter.locale     = [NSLocale currentLocale];
         formatter.dateFormat = nameOfFormat;

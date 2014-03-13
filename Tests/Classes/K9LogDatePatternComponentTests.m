@@ -19,6 +19,20 @@
     return formatter;
 }
 
+- (NSDate *)dateByParsingISO8601String:(NSString *)dateString
+                 appendingTimeInterval:(NSTimeInterval)timeInterval
+                              timeZone:(NSTimeZone *)timeZone
+{
+    NSDateFormatter *formatter = [self ISO8601DateFormatterWithTimeZone:timeZone];
+    NSDate          *date      = [formatter dateFromString:dateString];
+
+    if (timeInterval != 0.0) {
+        date = [date dateByAddingTimeInterval:timeInterval];
+    }
+
+    return date;
+}
+
 - (void)validateISO8601FormatWithComponent:(K9LogPatternDateComponent *)component
 {
     NSDateFormatter *formatter = [self ISO8601DateFormatterWithTimeZone:component.timeZone];
@@ -76,17 +90,32 @@
 
     XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601_BASIC");
 
-    NSDateFormatter *formatter = [self ISO8601DateFormatterWithTimeZone:component.timeZone];
-
     LogMessage *message = [[LogMessage alloc] init];
 
-    NSDate *timestamp = [formatter dateFromString:@"2014-02-01 01:20:30"];
-
-    message.timestamp = [timestamp dateByAddingTimeInterval:0.5];
+    message.timestamp = [self dateByParsingISO8601String:@"2014-02-01 01:20:30"
+                                   appendingTimeInterval:0.5
+                                                timeZone:component.timeZone];
 
     XCTAssertEqualObjects([component stringFromLogMessage:message],
                           @"20140201 012030,500",
                           @"ISO8601_BASIC");
+}
+
+- (void)testABSOLUTE
+{
+    K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"ABSOLUTE"];
+
+    XCTAssertEqualObjects(component.nameOrFormat, @"ABSOLUTE");
+
+    LogMessage *message = [[LogMessage alloc] init];
+
+    message.timestamp = [self dateByParsingISO8601String:@"2014-02-01 01:20:30"
+                                   appendingTimeInterval:0.5
+                                                timeZone:component.timeZone];
+
+    XCTAssertEqualObjects([component stringFromLogMessage:message],
+                          @"012030,500",
+                          @"ABSOLUTE");
 }
 
 - (void)testFormatEmpty
