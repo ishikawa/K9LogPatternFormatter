@@ -24,6 +24,8 @@ Supported patterns:
         1. `%d{ISO8601}` prints `2014-03-12 14:34:02,781`
         2. `%d{ISO8601_BASIC}` prints `20140312 143402,781`
         3. `%d{ABSOLUTE}` prints `14:34:02,781`
+        4. `%d{DATE}` prints `12 Mar 2014 14:34:02,781`
+        5. `%d{COMPACT}` prints `20140312143402781`
     * If no format is given, `ISO8601` is used.
 * `%m` message
 * `%p` log level
@@ -60,12 +62,12 @@ W: Message2 at File2:32
 
 ## Installation
 
-In your Podfile
+If you want formatter for [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack), in your Podfile:
 
     pod "K9LogPatternFormatter/Lumberjack",
         :git => 'https://github.com/ishikawa/K9LogPatternFormatter.git'
 
-or, you can grab core classes to writting your own formatter.
+or, you can grab core classes to writting your own formatter:
 
     pod "K9LogPatternFormatter/Core",
         :git => 'https://github.com/ishikawa/K9LogPatternFormatter.git'
