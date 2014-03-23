@@ -139,6 +139,21 @@
                           @"DATE");
 }
 
+- (void)testCOMPACT
+{
+    K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"COMPACT"];
+
+    LogMessage *message = [[LogMessage alloc] init];
+
+    message.timestamp = [self dateByParsingISO8601String:@"2012-11-02 14:34:02"
+                                   appendingTimeInterval:0.781
+                                                timeZone:component.timeZone];
+
+    XCTAssertEqualObjects([component stringFromLogMessage:message],
+                          @"20121102143402781",
+                          @"COMPACT");
+}
+
 - (void)testFormatEmpty
 {
     LogMessage *message = [[LogMessage alloc] init];

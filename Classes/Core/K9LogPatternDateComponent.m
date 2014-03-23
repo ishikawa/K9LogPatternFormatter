@@ -26,6 +26,7 @@
                                   @"ISO8601_BASIC" : @"yyyyMMdd' 'HHmmss','SSS",
                                   @"ABSOLUTE" : @"HHmmss','SSS",
                                   @"DATE" : @"dd' 'MMM' 'yyyy' 'HH':'mm':'ss','SSS",
+                                  @"COMPACT" : @"yyyyMMddHHmmssSSS",
                                   };
     });
 
