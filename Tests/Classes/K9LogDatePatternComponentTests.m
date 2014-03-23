@@ -70,16 +70,26 @@
 
 - (void)testInitWithParameters
 {
-    K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithParameters:@[ @"ISO8601" ]];
+    {
+        K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithParameters:@[ @"ISO8601" ]];
 
-    XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601");
+        XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601");
+    }
+    {
+        K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithParameters:@[ @"ISO8601_BASIC" ]];
+
+        XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601_BASIC");
+    }
+    {
+        K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithParameters:@[ @"yyyy" ]];
+
+        XCTAssertEqualObjects(component.nameOrFormat, @"yyyy");
+    }
 }
 
 - (void)testISO8601
 {
     K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"ISO8601"];
-
-    XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601");
 
     [self validateISO8601FormatWithComponent:component];
 }
@@ -87,8 +97,6 @@
 - (void)testISO8601_BASIC
 {
     K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"ISO8601_BASIC"];
-
-    XCTAssertEqualObjects(component.nameOrFormat, @"ISO8601_BASIC");
 
     LogMessage *message = [[LogMessage alloc] init];
 
@@ -105,8 +113,6 @@
 {
     K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"ABSOLUTE"];
 
-    XCTAssertEqualObjects(component.nameOrFormat, @"ABSOLUTE");
-
     LogMessage *message = [[LogMessage alloc] init];
 
     message.timestamp = [self dateByParsingISO8601String:@"2014-02-01 01:20:30"
@@ -116,6 +122,21 @@
     XCTAssertEqualObjects([component stringFromLogMessage:message],
                           @"012030,500",
                           @"ABSOLUTE");
+}
+
+- (void)testDATE
+{
+    K9LogPatternDateComponent *component = [[K9LogPatternDateComponent alloc] initWithNameOrFormat:@"DATE"];
+
+    LogMessage *message = [[LogMessage alloc] init];
+
+    message.timestamp = [self dateByParsingISO8601String:@"2012-11-02 14:34:02"
+                                   appendingTimeInterval:0.781
+                                                timeZone:component.timeZone];
+
+    XCTAssertEqualObjects([component stringFromLogMessage:message],
+                          @"02 Nov 2012 14:34:02,781",
+                          @"DATE");
 }
 
 - (void)testFormatEmpty
