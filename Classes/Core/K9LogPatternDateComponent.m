@@ -12,11 +12,20 @@
 
 + (NSDateFormatter *)createDateFormatterWithNameOrFormat:(NSString *)nameOfFormat
 {
+    static NSDictionary *predefinedDateFormats;
     static NSLocale *en_US_POSIX;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         en_US_POSIX = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+
+        // Predefined date formats are defined in Log4j 2 PatternLayout
+        // http://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout
+        predefinedDateFormats = @{
+                                  @"ISO8601" : @"yyyy'-'MM'-'dd' 'HH':'mm':'ss','SSS",
+                                  @"ISO8601_BASIC" : @"yyyyMMdd' 'HHmmss','SSS",
+                                  @"ABSOLUTE" : @"HHmmss','SSS",
+                                  };
     });
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -27,12 +36,18 @@
     formatter.timeZone = [NSTimeZone systemTimeZone];
 
     // TODO: Add more predefined formats
-    if (!nameOfFormat || [nameOfFormat isEqualToString:@"ISO8601"]) {
-        formatter.dateFormat = @"yyyy'-'MM'-'dd' 'HH':'mm':'ss','SSS";
-    } else if ([nameOfFormat isEqualToString:@"ISO8601_BASIC"]) {
-        formatter.dateFormat = @"yyyyMMdd' 'HHmmss','SSS";
-    } else if ([nameOfFormat isEqualToString:@"ABSOLUTE"]) {
-        formatter.dateFormat = @"HHmmss','SSS";
+
+    // If no format is given, "ISO8601" is assumed
+    if (!nameOfFormat) {
+        nameOfFormat = @"ISO8601";
+    }
+
+    NSAssert(nameOfFormat != nil, @"nameOfFormat");
+
+    NSString *format = predefinedDateFormats[nameOfFormat];
+
+    if (format) {
+        formatter.dateFormat = format;
     } else {
         formatter.locale     = [NSLocale currentLocale];
         formatter.dateFormat = nameOfFormat;
