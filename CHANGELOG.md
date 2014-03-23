@@ -2,6 +2,12 @@
 
 **IMPORTANT: Version 0.y.z is for initial develpment. Anything may change at any time. The public API should not be considered stable.**
 
+## 0.4.0
+
+* Add `%M` pattern to print method/function name
+* Add more predefined date formats
+* Refactor predefined date formats
+
 ## 0.3.0
 
 * Remove k9_fileName from K9LogMessage protocol
