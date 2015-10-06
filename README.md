@@ -5,9 +5,9 @@
 ## Usage
 
 ```objc
-#import "DDLog.h"
-#import "DDTTYLogger.h"
-#import "K9LogLumberjackPatternFormatter.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <K9LogPatternFormatter/K9LogLumberjackPatternFormatter.h>
+
 ...
 id<DDLogger> consoleLogger = [DDTTYLogger sharedInstance];
 
