@@ -33,7 +33,7 @@
     return self.filePath;
 }
 
-- (NSInteger)k9_lineNumber
+- (NSUInteger)k9_lineNumber
 {
     return self.lineNumber;
 }

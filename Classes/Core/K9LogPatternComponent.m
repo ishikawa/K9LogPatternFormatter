@@ -102,7 +102,7 @@
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    return [NSString stringWithFormat:@"%ld", (long)[logMessage k9_lineNumber]];
+    return [NSString stringWithFormat:@"%lu", (unsigned long)[logMessage k9_lineNumber]];
 }
 
 @end

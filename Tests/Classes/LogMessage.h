@@ -7,7 +7,7 @@
 @property (nonatomic) K9LogMessageLevel  level;
 @property (nonatomic) NSDate            *timestamp;
 @property (nonatomic) NSString          *filePath;
-@property (nonatomic) NSInteger          lineNumber;
+@property (nonatomic) NSUInteger         lineNumber;
 @property (nonatomic) NSString          *methodName;
 
 @end

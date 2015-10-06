@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, K9LogMessageLevel) {
 
 - (NSString *)k9_filePath;
 
-- (NSInteger)k9_lineNumber;
+- (NSUInteger)k9_lineNumber;
 
 - (NSString *)k9_methodName;
 
