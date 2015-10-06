@@ -1,17 +1,5 @@
 #import "K9LogPatternComponent.h"
 
-static NSString *createStringWithUTF8BytesNoCopy(const char *bytes)
-{
-    if (!bytes) {
-        return nil;
-    }
-
-    return [[NSString alloc] initWithBytesNoCopy:(char *)bytes
-                                          length:strlen(bytes)
-                                        encoding:NSUTF8StringEncoding
-                                    freeWhenDone:NO];
-}
-
 @implementation K9LogPatternLiteralTextComponent
 
 - (instancetype)init
@@ -103,7 +91,7 @@ static NSString *createStringWithUTF8BytesNoCopy(const char *bytes)
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    return createStringWithUTF8BytesNoCopy([logMessage k9_filePath]);
+    return [logMessage k9_filePath];
 }
 
 @end
@@ -125,7 +113,7 @@ static NSString *createStringWithUTF8BytesNoCopy(const char *bytes)
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    return createStringWithUTF8BytesNoCopy([logMessage k9_methodName]);
+    return [logMessage k9_methodName];
 }
 
 @end

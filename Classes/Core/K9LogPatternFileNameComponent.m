@@ -4,7 +4,7 @@
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
-    const char *filePath = [logMessage k9_filePath];
+    const char *filePath = [[logMessage k9_filePath] UTF8String];
 
     if (!filePath) {
         return nil;

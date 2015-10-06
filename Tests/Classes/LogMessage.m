@@ -28,9 +28,9 @@
     return self.timestamp;
 }
 
-- (const char *)k9_filePath
+- (NSString *)k9_filePath
 {
-    return [self.filePath UTF8String];
+    return self.filePath;
 }
 
 - (NSInteger)k9_lineNumber
@@ -38,9 +38,9 @@
     return self.lineNumber;
 }
 
-- (const char *)k9_methodName
+- (NSString *)k9_methodName
 {
-    return [self.methodName UTF8String];
+    return self.methodName;
 }
 
 @end
