@@ -90,7 +90,9 @@
 
 /* Begin PBXFileReference section */
 		1C036EA4341A42D187BEBACE /* libPods-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSX.xcconfig"; path = "Pods/Pods-OSX.xcconfig"; sourceTree = "<group>"; };
+		3839238F17DDDEA6A0D7702D /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		42D1560FC75D5B48837C3E94 /* Pods-OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSX/Pods-OSX.debug.xcconfig"; sourceTree = "<group>"; };
+		7B2ECBC8826CD2796E9279A9 /* Pods-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogLevelPatternComponentTests.m; sourceTree = "<group>"; };
 		A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMinWidthConstraintTests.m; sourceTree = "<group>"; };
 		A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMaxWidthConstraintTests.m; sourceTree = "<group>"; };
@@ -130,8 +132,8 @@
 		A5EF2DE718B923910072971D /* iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EF2DEA18B923910072971D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A5EF2E0018B996770072971D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.xcconfig"; path = "Pods/Pods-iOS.xcconfig"; sourceTree = "<group>"; };
 		BCACFE782CAE4A30B1EC91D4 /* libPods-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2092C26A6A3587613A55B74 /* Pods-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSX/Pods-OSX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E547957216626A7C615336F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42D1560FC75D5B48837C3E94 /* Pods-OSX.debug.xcconfig */,
+				C2092C26A6A3587613A55B74 /* Pods-OSX.release.xcconfig */,
+				3839238F17DDDEA6A0D7702D /* Pods-iOS.debug.xcconfig */,
+				7B2ECBC8826CD2796E9279A9 /* Pods-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A50F7AA418C5CBBB003B795E /* Pattern Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +290,7 @@
 				A580A20418C2C2EA00AD8F75 /* Tests */,
 				A5EF2DE918B923910072971D /* Frameworks */,
 				A5EF2DE818B923910072971D /* Products */,
-				99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */,
-				A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */,
+				0E547957216626A7C615336F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,7 +442,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-OSX-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OSX/Pods-OSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9BD64B0A8364DCCBB7B4C4E /* Copy Pods Resources */ = {
@@ -445,7 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-iOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS/Pods-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -525,7 +537,7 @@
 /* Begin XCBuildConfiguration section */
 		A580A1F218C2B89900AD8F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */;
+			baseConfigurationReference = 42D1560FC75D5B48837C3E94 /* Pods-OSX.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -572,7 +584,7 @@
 		};
 		A580A1F318C2B89900AD8F75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99C444FC13A94FEA90254C72 /* Pods-OSX.xcconfig */;
+			baseConfigurationReference = C2092C26A6A3587613A55B74 /* Pods-OSX.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -639,7 +651,7 @@
 		};
 		A5EF2DFA18B923910072971D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */;
+			baseConfigurationReference = 3839238F17DDDEA6A0D7702D /* Pods-iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -688,7 +700,7 @@
 		};
 		A5EF2DFB18B923910072971D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A75208F89ED241A9AC32F0B5 /* Pods-iOS.xcconfig */;
+			baseConfigurationReference = 7B2ECBC8826CD2796E9279A9 /* Pods-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
