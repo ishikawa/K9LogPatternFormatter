@@ -15,7 +15,7 @@
 {
     return [self formatLogMessageWithPattern:pattern
                                      message:@""
-                                        flag:LOG_FLAG_VERBOSE
+                                        flag:DDLogFlagVerbose
                                         file:@"test.m"
                                         line:1
                                   methodName:methodName
@@ -28,7 +28,7 @@
 {
     return [self formatLogMessageWithPattern:pattern
                                      message:@""
-                                        flag:LOG_FLAG_VERBOSE
+                                        flag:DDLogFlagVerbose
                                         file:file
                                         line:line
                                   methodName:@""
@@ -40,7 +40,7 @@
 {
     return [self formatLogMessageWithPattern:pattern
                                      message:message
-                                        flag:LOG_FLAG_VERBOSE
+                                        flag:DDLogFlagVerbose
                                         file:@"test.m"
                                         line:1
                                   methodName:@""
@@ -65,7 +65,7 @@
 {
     return [self formatLogMessageWithPattern:pattern
                                      message:@""
-                                        flag:LOG_FLAG_VERBOSE
+                                        flag:DDLogFlagVerbose
                                         file:@"test.m"
                                         line:1
                                   methodName:@""
@@ -84,19 +84,16 @@
 
     XCTAssertNotNil(formatter, @"formatter for %@", pattern);
 
-    DDLogMessage *logMessage = [[DDLogMessage alloc] initWithLogMsg:message
-                                                              level:LOG_LEVEL_VERBOSE
-                                                               flag:flag
-                                                            context:0
-                                                               file:[file UTF8String]
-                                                           function:[methodName UTF8String]
-                                                               line:line
-                                                                tag:nil
-                                                            options:0];
-
-    if (timestamp) {
-        logMessage->timestamp = timestamp;
-    }
+    DDLogMessage *logMessage = [[DDLogMessage alloc] initWithMessage:message
+                                                               level:DDLogLevelVerbose
+                                                                flag:flag
+                                                             context:0
+                                                                file:file
+                                                            function:methodName
+                                                                line:line
+                                                                 tag:nil
+                                                             options:0
+                                                           timestamp:timestamp];
 
     return [formatter formatLogMessage:logMessage];
 }
@@ -199,16 +196,16 @@
 
 - (void)testFormatLogMessage_logLevel
 {
-    NSDictionary *stringByLevel = @{
-                                    @(LOG_FLAG_VERBOSE): @"VERBOSE",
-                                    @(LOG_FLAG_DEBUG):   @"DEBUG",
-                                    @(LOG_FLAG_INFO):    @"INFO",
-                                    @(LOG_FLAG_WARN):    @"WARN",
-                                    @(LOG_FLAG_ERROR):   @"ERROR",
+    NSDictionary *stringByFlag = @{
+                                    @(DDLogFlagVerbose): @"VERBOSE",
+                                    @(DDLogFlagDebug):   @"DEBUG",
+                                    @(DDLogFlagInfo):    @"INFO",
+                                    @(DDLogFlagWarning): @"WARN",
+                                    @(DDLogFlagError):   @"ERROR",
                                     @(1000):             @"CUSTOM",
                                     };
 
-    [stringByLevel enumerateKeysAndObjectsUsingBlock:^(NSNumber *flag, NSString *label, BOOL *stop) {
+    [stringByFlag enumerateKeysAndObjectsUsingBlock:^(NSNumber *flag, NSString *label, BOOL *stop) {
         NSString *text = [self formatLogMessageWithPattern:@"[%p] %m"
                                                    message:@"MESSAGE"
                                                       flag:[flag intValue]];
@@ -328,13 +325,13 @@
         {
             NSString *text = [self formatLogMessageWithPattern:@"%-5p %m"
                                                        message:@"Message"
-                                                          flag:LOG_FLAG_DEBUG];
+                                                          flag:DDLogFlagDebug];
             XCTAssertEqualObjects(text, @"DEBUG Message");
         }
         {
             NSString *text = [self formatLogMessageWithPattern:@"%-5p %m"
                                                        message:@"Message"
-                                                          flag:LOG_FLAG_WARN];
+                                                          flag:DDLogFlagWarning];
             XCTAssertEqualObjects(text, @"WARN  Message");
         }
     }

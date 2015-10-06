@@ -12,47 +12,48 @@
 
 - (NSString *)k9_messageText
 {
-    return self->logMsg;
+    return self.message;
 }
 
 - (K9LogMessageLevel)k9_logLevel
 {
-    const NSInteger level = self->logFlag;
+    // CocoaLumberjack: DDLogFlag is constant value, but DDLogLevel is bitmask.
+    const DDLogFlag flag = self.flag;
 
-    switch (level) {
-        case LOG_FLAG_VERBOSE:
+    switch (flag) {
+        case DDLogFlagVerbose:
             return K9LogMessageLevelVerbose;
-        case LOG_FLAG_DEBUG:
+        case DDLogFlagDebug:
             return K9LogMessageLevelDebug;
-        case LOG_FLAG_INFO:
+        case DDLogFlagInfo:
             return K9LogMessageLevelInfo;
-        case LOG_FLAG_WARN:
+        case DDLogFlagWarning:
             return K9LogMessageLevelWarn;
-        case LOG_FLAG_ERROR:
+        case DDLogFlagError:
             return K9LogMessageLevelError;
         default:
-            return K9LogMessageLevelCustomBase + level;
+            return K9LogMessageLevelCustomBase + flag;
     }
 }
 
 - (NSDate *)k9_timestamp
 {
-    return self->timestamp;
+    return self.timestamp;
 }
 
 - (const char *)k9_filePath
 {
-    return self->file;
+    return [self.file UTF8String];
 }
 
 - (NSInteger)k9_lineNumber
 {
-    return self->lineNumber;
+    return self.line;
 }
 
 - (const char *)k9_methodName
 {
-    return self->function;
+    return [self.function UTF8String];
 }
 
 @end

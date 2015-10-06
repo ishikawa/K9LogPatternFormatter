@@ -45,7 +45,7 @@ static NSString *createStringWithUTF8BytesNoCopy(const char *bytes)
 
 - (instancetype)init
 {
-    return [self initWithParameters:@[]];
+    return [super init];
 }
 
 - (instancetype)initWithParameters:(NSArray *)parameters
