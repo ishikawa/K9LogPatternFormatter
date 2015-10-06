@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.0
+
+* Migrating to CocoaLumberjack 2.x
+
 **IMPORTANT: Version 0.y.z is for initial develpment. Anything may change at any time. The public API should not be considered stable.**
 
 ## 0.4.0
