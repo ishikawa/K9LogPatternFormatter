@@ -64,13 +64,11 @@ W: Message2 at File2:32
 
 If you want formatter for [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack), in your Podfile:
 
-    pod "K9LogPatternFormatter/Lumberjack",
-        :git => 'https://github.com/ishikawa/K9LogPatternFormatter.git'
+    pod "K9LogPatternFormatter/Lumberjack"
 
 or, you can grab core classes to writting your own formatter:
 
-    pod "K9LogPatternFormatter/Core",
-        :git => 'https://github.com/ishikawa/K9LogPatternFormatter.git'
+    pod "K9LogPatternFormatter/Core"
 
 ## License
 
