@@ -13,6 +13,9 @@ Pod::Spec.new do |spec|
   spec.frameworks   = 'Foundation'
   spec.requires_arc = true
 
+  spec.ios.deployment_target = '5.0'
+  spec.osx.deployment_target = '10.7'
+
   spec.subspec 'Core' do |core|
     core.source_files = 'Classes/Core/**/*.{h,m}'
   end
