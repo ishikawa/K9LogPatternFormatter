@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.0.0
+
+* Adapting Xcode 7
+  - Nullability
+* Deployment Target changes
+  - iOS 8.4
+  - OSX 10.8
+
 ## 1.0.0
 
 * Migrating to CocoaLumberjack 2.x
