@@ -15,7 +15,7 @@
     return self;
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return [_component stringFromLogMessage:logMessage];
 }
@@ -36,7 +36,7 @@
     return self;
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     NSString *message = [self.component stringFromLogMessage:logMessage];
 
@@ -76,7 +76,7 @@
     return self;
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     NSString *message = [self.component stringFromLogMessage:logMessage];
 

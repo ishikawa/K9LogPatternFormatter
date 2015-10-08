@@ -8,14 +8,14 @@
 
 @implementation K9LogPatternFilePathComponentTests
 
-- (void)testStringFromNil
+- (void)testStringFromEmpty
 {
     K9LogPatternFilePathComponent *component = [[K9LogPatternFilePathComponent alloc] init];
 
     LogMessage *message = [[LogMessage alloc] init];
-    message.filePath = nil;
+    message.filePath = @"";
 
-    XCTAssertNil([component stringFromLogMessage:message]);
+    XCTAssertEqualObjects([component stringFromLogMessage:message], @"");
 }
 
 - (void)testStringFromEmptyPath

@@ -120,11 +120,14 @@
     }
 
     // Given nil
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
     {
         XCTAssertThrowsSpecificNamed([[K9LogLumberjackPatternFormatter alloc] initWithPattern:nil error:NULL],
                                      NSException,
                                      NSInvalidArgumentException);
     }
+#pragma clang diagnostic pop
 }
 
 #pragma mark Formatting

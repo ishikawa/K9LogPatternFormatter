@@ -3,11 +3,11 @@
 
 @interface LogMessage : NSObject <K9LogMessage>
 
-@property (nonatomic) NSString          *text;
-@property (nonatomic) K9LogMessageLevel  level;
-@property (nonatomic) NSDate            *timestamp;
-@property (nonatomic) NSString          *filePath;
-@property (nonatomic) NSUInteger         lineNumber;
-@property (nonatomic) NSString          *methodName;
+@property (nonatomic, nonnull) NSString          *text;
+@property (nonatomic)          K9LogMessageLevel  level;
+@property (nonatomic, nonnull) NSDate            *timestamp;
+@property (nonatomic, nonnull) NSString          *filePath;
+@property (nonatomic)          NSUInteger         lineNumber;
+@property (nonatomic, nonnull) NSString          *methodName;
 
 @end

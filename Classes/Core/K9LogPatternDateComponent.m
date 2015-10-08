@@ -99,7 +99,7 @@
     return [[self dateFormatter] timeZone];
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     NSDateFormatter *dateFormatter = [self dateFormatter];
 
