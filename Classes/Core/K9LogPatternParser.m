@@ -67,7 +67,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
             } else {
                 if (errorPtr != NULL) {
                     *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
-                                                    code:K9LogPatternParserUnrecognizedPatternError
+                                                    code:K9LogPatternParserErrorUnrecognizedPattern
                                                 userInfo:nil];
                 }
 
@@ -95,7 +95,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
                         // Unclosed brace
                         if (errorPtr != NULL) {
                             *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
-                                                            code:K9LogPatternParserUnclosedBraceError
+                                                            code:K9LogPatternParserErrorUnclosedBrace
                                                         userInfo:nil];
                         }
 

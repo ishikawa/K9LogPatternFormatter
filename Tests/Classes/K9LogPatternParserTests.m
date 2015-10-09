@@ -151,7 +151,7 @@
 
         XCTAssertNotNil(error);
         XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternParserUnclosedBraceError);
+        XCTAssertEqual(error.code, K9LogPatternParserErrorUnclosedBrace);
     }
 }
 

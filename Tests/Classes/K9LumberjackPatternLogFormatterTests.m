@@ -144,7 +144,7 @@
         XCTAssertNil(formatter);
         XCTAssertNotNil(error);
         XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternParserUnrecognizedPatternError);
+        XCTAssertEqual(error.code, K9LogPatternParserErrorUnrecognizedPattern);
     }
 
     // Unrecognized specifier
@@ -157,7 +157,7 @@
         XCTAssertNil(formatter);
         XCTAssertNotNil(error);
         XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternParserUnrecognizedPatternError);
+        XCTAssertEqual(error.code, K9LogPatternParserErrorUnrecognizedPattern);
     }
 }
 
