@@ -58,7 +58,7 @@ W: Message2 at File2:32
 ## Requirements
 
 - Mac OS X 10.9
-- iOS 8.4
+- iOS 7.0
 - Xcode 7
 
 ## Installation
