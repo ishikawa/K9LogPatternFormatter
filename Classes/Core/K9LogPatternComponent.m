@@ -29,6 +29,15 @@
 
 @end
 
+@implementation K9LogPatternLiteralPercentSignComponent
+
+- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+{
+    return @"%";
+}
+
+@end
+
 @implementation K9LogPatternParameterizedComponent
 
 - (instancetype)init

@@ -41,6 +41,12 @@
 
 @end
 
+#pragma mark K9LogPatternLiteralPercentSignComponent
+
+@interface K9LogPatternLiteralPercentSignComponent : NSObject <K9LogPatternComponent>
+
+@end
+
 #pragma mark K9LogPatternMessageComponent
 
 @interface K9LogPatternMessageComponent : NSObject <K9LogPatternComponent>
