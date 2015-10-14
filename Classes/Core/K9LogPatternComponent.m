@@ -31,7 +31,7 @@
 
 @implementation K9LogPatternPercentSignComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return @"%";
 }
