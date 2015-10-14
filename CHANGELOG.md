@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.0
+
+* New patterns
+  - Single percent sign pattern `%%`
+
 ## 1.0.0
 
 * Migrating to CocoaLumberjack 2.x

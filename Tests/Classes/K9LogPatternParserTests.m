@@ -70,6 +70,15 @@
     }
 }
 
+- (void)testLiteralPercentSign
+{
+    K9LogPatternParseResult *components = [self parseComponentsFromPattern:@"%%"];
+
+    XCTAssertEqual(components.count, (NSUInteger)1, @"1 component");
+    XCTAssertTrue([components[0] isKindOfClass:[K9LogPatternPercentSignComponent class]],
+                  @"1st component");
+}
+
 - (void)testPatternMapping
 {
     NSDictionary *klassByPattern = @{

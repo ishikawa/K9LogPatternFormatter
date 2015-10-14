@@ -33,6 +33,7 @@ Supported patterns:
 * `%l` file path
 * `%L` line number
 * `%M` function or method name
+* `%%` single percent sign (`'%'`)
 
 Min/max width modifier is also supported:
 
