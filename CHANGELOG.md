@@ -10,6 +10,11 @@
   - For example, `K9LogPatternParserUnrecognizedPatternError` to `K9LogPatternParserErrorUnrecognizedPattern`, which can be
     referenced as `K9LogPatternParserError.UnrecognizedPattern` from Swift code.
 
+## 1.1.0
+
+* New patterns
+  - Single percent sign pattern `%%`
+
 ## 1.0.0
 
 * Migrating to CocoaLumberjack 2.x
