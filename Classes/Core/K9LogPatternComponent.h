@@ -43,7 +43,7 @@
 
 #pragma mark K9LogPatternLiteralPercentSignComponent
 
-@interface K9LogPatternLiteralPercentSignComponent : NSObject <K9LogPatternComponent>
+@interface K9LogPatternPercentSignComponent : NSObject <K9LogPatternComponent>
 
 @end
 

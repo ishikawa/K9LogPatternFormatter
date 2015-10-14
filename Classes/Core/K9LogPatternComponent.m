@@ -29,7 +29,7 @@
 
 @end
 
-@implementation K9LogPatternLiteralPercentSignComponent
+@implementation K9LogPatternPercentSignComponent
 
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
