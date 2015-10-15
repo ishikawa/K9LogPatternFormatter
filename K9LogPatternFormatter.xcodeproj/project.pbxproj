@@ -50,6 +50,8 @@
 		A52CE93218C9E169000D2670 /* K9LogPatternFileNameComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A52CE93018C9E169000D2670 /* K9LogPatternFileNameComponent.m */; };
 		A52E54DB1BC3FB0F0017D16A /* CocoaLumberjackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E54DA1BC3FB0F0017D16A /* CocoaLumberjackTests.m */; settings = {ASSET_TAGS = (); }; };
 		A52E55111BCDD8A20017D16A /* K9LogPatternPercentSignComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E55101BCDD8A20017D16A /* K9LogPatternPercentSignComponentTests.m */; settings = {ASSET_TAGS = (); }; };
+		A52E67D01BCF266100039C20 /* K9LogPatternLevelComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E67CF1BCF266100039C20 /* K9LogPatternLevelComponent.m */; settings = {ASSET_TAGS = (); }; };
+		A52E67D11BCF266100039C20 /* K9LogPatternLevelComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A52E67CF1BCF266100039C20 /* K9LogPatternLevelComponent.m */; settings = {ASSET_TAGS = (); }; };
 		A550A24B18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A550A24A18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m */; };
 		A550A24C18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A550A24A18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m */; };
 		A580A1E718C2B89900AD8F75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF2DEA18B923910072971D /* XCTest.framework */; };
@@ -113,6 +115,8 @@
 		A52CE93018C9E169000D2670 /* K9LogPatternFileNameComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternFileNameComponent.m; sourceTree = "<group>"; };
 		A52E54DA1BC3FB0F0017D16A /* CocoaLumberjackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaLumberjackTests.m; sourceTree = "<group>"; };
 		A52E55101BCDD8A20017D16A /* K9LogPatternPercentSignComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternPercentSignComponentTests.m; sourceTree = "<group>"; };
+		A52E67CE1BCF266100039C20 /* K9LogPatternLevelComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternLevelComponent.h; sourceTree = "<group>"; };
+		A52E67CF1BCF266100039C20 /* K9LogPatternLevelComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternLevelComponent.m; sourceTree = "<group>"; };
 		A550A24A18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMethodNameComponentTests.m; sourceTree = "<group>"; };
 		A580A1E618C2B89900AD8F75 /* OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A580A20718C2C2EA00AD8F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				A580A22618C2D5F500AD8F75 /* K9LogPatternComponent.m */,
 				A50F7AB018C5F1FF003B795E /* K9LogPatternDateComponent.h */,
 				A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */,
+				A52E67CE1BCF266100039C20 /* K9LogPatternLevelComponent.h */,
+				A52E67CF1BCF266100039C20 /* K9LogPatternLevelComponent.m */,
 				A52CE92F18C9E169000D2670 /* K9LogPatternFileNameComponent.h */,
 				A52CE93018C9E169000D2670 /* K9LogPatternFileNameComponent.m */,
 				A580A22718C2D5F500AD8F75 /* K9LogPatternModifier.h */,
@@ -473,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52E67D11BCF266100039C20 /* K9LogPatternLevelComponent.m in Sources */,
 				A50F7AA318C5B4C8003B795E /* K9LogLevelPatternComponentTests.m in Sources */,
 				A50F7AB318C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */,
 				A580A23518C2D5F500AD8F75 /* K9LogLumberjackPatternFormatter.m in Sources */,
@@ -523,6 +530,7 @@
 				A580A24218C4AEB000AD8F75 /* LogMessage.m in Sources */,
 				A50F7AA918C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */,
 				A52CE92618C8B15E000D2670 /* K9LogPatternLineNumberComponentTests.m in Sources */,
+				A52E67D01BCF266100039C20 /* K9LogPatternLevelComponent.m in Sources */,
 				A580A22E18C2D5F500AD8F75 /* K9LogPatternComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

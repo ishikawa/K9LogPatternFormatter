@@ -4,6 +4,7 @@
 #import "K9LogPatternModifier.h"
 #import "K9LogPatternDateComponent.h"
 #import "K9LogPatternFileNameComponent.h"
+#import "K9LogPatternLevelComponent.h"
 
 @interface K9LogPatternParserTests : XCTestCase
 

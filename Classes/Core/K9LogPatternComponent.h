@@ -53,12 +53,6 @@
 
 @end
 
-#pragma mark K9LogPatternLevelComponent
-
-@interface K9LogPatternLevelComponent : NSObject <K9LogPatternComponent>
-
-@end
-
 #pragma mark K9LogPatternFilePathComponent
 
 @interface K9LogPatternFilePathComponent : NSObject <K9LogPatternComponent>
