@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "K9LogPatternComponent.h"
 
-@interface K9LogPatternDateComponent : K9LogPatternParameterizedComponent
+@interface K9LogPatternDateComponent : NSObject <K9LogPatternParameterizedComponent>
 
 @property (nonatomic, readonly) NSString   *nameOrFormat;
 @property (nonatomic, readonly) NSLocale   *locale;

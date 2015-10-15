@@ -38,27 +38,6 @@
 
 @end
 
-@implementation K9LogPatternParameterizedComponent
-
-- (instancetype)init
-{
-    return [super init];
-}
-
-- (instancetype)initWithParameters:(NSArray *)parameters
-{
-    return [super init];
-}
-
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
-{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
-}
-
-@end
-
 #pragma mark K9LogPatternMessageComponent
 
 @implementation K9LogPatternMessageComponent

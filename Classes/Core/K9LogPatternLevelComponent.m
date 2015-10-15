@@ -2,6 +2,11 @@
 
 @implementation K9LogPatternLevelComponent
 
+- (instancetype)initWithParameters:(NSArray *)parameters
+{
+    return [super init];
+}
+
 - (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
 {
     switch ([logMessage k9_logLevel]) {

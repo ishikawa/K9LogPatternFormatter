@@ -25,12 +25,6 @@
 
 #pragma mark - Pattern Component Classes
 
-#pragma mark K9LogPatternParameterizedComponent
-
-@interface K9LogPatternParameterizedComponent : NSObject <K9LogPatternParameterizedComponent>
-
-@end
-
 #pragma mark K9LogPatternLiteralTextComponent
 
 @interface K9LogPatternLiteralTextComponent : NSObject <K9LogPatternComponent>
