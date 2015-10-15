@@ -5,6 +5,7 @@
 * Adapting Xcode 7
   - Nullability
 * Deployment Target changes
+  - iOS 7.0
   - OSX 10.8
 * Rename K9LogPatternParserError members to follow ObjC to Swift naming convention
   - For example, `K9LogPatternParserUnrecognizedPatternError` to `K9LogPatternParserErrorUnrecognizedPattern`, which can be
