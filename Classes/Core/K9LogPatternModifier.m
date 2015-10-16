@@ -4,10 +4,12 @@
 
 - (instancetype)init
 {
-    return [self initWithComponent:nil];
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"Use -initWithComponent:"
+                                 userInfo:nil];
 }
 
-- (instancetype)initWithComponent:(id<K9LogPatternComponent>)component
+- (nonnull instancetype)initWithComponent:(nonnull id<K9LogPatternComponent>)component
 {
     if ((self = [super init])) {
         _component = component;
@@ -24,9 +26,9 @@
 
 @implementation K9LogPatternMinWidthConstraint
 
-- (instancetype)initWithComponent:(id<K9LogPatternComponent>)component
-                            width:(NSUInteger)width
-                leftJustification:(BOOL)leftJustification
+- (nonnull instancetype)initWithComponent:(nonnull id<K9LogPatternComponent>)component
+                                    width:(NSUInteger)width
+                        leftJustification:(BOOL)leftJustification
 {
     if ((self = [super initWithComponent:component])) {
         _width = width;
@@ -66,8 +68,8 @@
 
 @implementation K9LogPatternMaxWidthConstraint
 
-- (instancetype)initWithComponent:(id<K9LogPatternComponent>)component
-                            width:(NSUInteger)width
+- (nonnull instancetype)initWithComponent:(nonnull id<K9LogPatternComponent>)component
+                                    width:(NSUInteger)width
 {
     if ((self = [super initWithComponent:component])) {
         _width = width;

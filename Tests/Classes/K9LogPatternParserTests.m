@@ -42,9 +42,13 @@
 
     NSError *error = nil;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
     XCTAssertThrowsSpecificNamed([parser parse:nil error:&error],
                                  NSException,
                                  NSInvalidArgumentException);
+#pragma clang diagnostic pop
+
     XCTAssertNil(error);
 }
 

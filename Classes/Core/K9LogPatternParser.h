@@ -7,7 +7,7 @@
 
 @interface K9LogPatternParser : NSObject
 
-- (K9LogPatternParseResult *)parse:(NSString *)pattern error:(NSError **)errorPtr;
+- (nullable K9LogPatternParseResult *)parse:(nonnull NSString *)pattern error:(NSError * _Nullable * _Nullable)errorPtr;
 
 // TODO: Customization API
 
@@ -18,21 +18,21 @@
 @interface K9LogPatternParseResult : NSObject <K9LogPatternComponent,
                                                NSFastEnumeration>
 
-- (instancetype)initWithComponents:(NSArray *)components;
+- (nonnull instancetype)initWithComponents:(nonnull NSArray<id<K9LogPatternComponent>> *)components;
 
 - (NSUInteger)count;
 
-- (id<K9LogPatternComponent>)componentAtIndex:(NSUInteger)index;
+- (nonnull id<K9LogPatternComponent>)componentAtIndex:(NSUInteger)index;
 
 #pragma mark Indexed Subscripting
 
-- (id<K9LogPatternComponent>)objectAtIndexedSubscript:(NSUInteger)idx;
+- (nonnull id<K9LogPatternComponent>)objectAtIndexedSubscript:(NSUInteger)idx;
 
 @end
 
 #pragma mark - Errors
 
-extern NSString *const K9LogPatternParserErrorDomain;
+extern NSString * _Nonnull const K9LogPatternParserErrorDomain;
 
 /*
  * -[NSError code] of K9LogPatternParserErrorDomain
