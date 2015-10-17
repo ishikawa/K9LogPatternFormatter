@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.1.0
+
+* Remove unnecessary thread local storage
+
 ## 2.0.0
 
 * Adapting Xcode 7
