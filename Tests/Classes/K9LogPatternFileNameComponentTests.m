@@ -9,14 +9,14 @@
 
 @implementation K9LogPatternFileNameComponentTests
 
-- (void)testStringFromNil
+- (void)testStringFromEmpty
 {
     K9LogPatternFileNameComponent *component = [[K9LogPatternFileNameComponent alloc] init];
 
     LogMessage *message = [[LogMessage alloc] init];
-    message.filePath = nil;
+    message.filePath = @"";
 
-    XCTAssertNil([component stringFromLogMessage:message]);
+    XCTAssertEqualObjects([component stringFromLogMessage:message], @"");
 }
 
 - (NSString *)formatWithFilePath:(NSString *)filePath

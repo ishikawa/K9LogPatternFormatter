@@ -8,7 +8,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
 
 @implementation K9LogPatternParser
 
-- (K9LogPatternParseResult *)parse:(NSString *)pattern error:(NSError **)errorPtr
+- (nullable K9LogPatternParseResult *)parse:(nonnull NSString *)pattern error:(NSError * _Nullable * _Nullable)errorPtr
 {
     if (!pattern) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
@@ -69,7 +69,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
             } else {
                 if (errorPtr != NULL) {
                     *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
-                                                    code:K9LogPatternParserUnrecognizedPatternError
+                                                    code:K9LogPatternParserErrorUnrecognizedPattern
                                                 userInfo:nil];
                 }
 
@@ -97,7 +97,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
                         // Unclosed brace
                         if (errorPtr != NULL) {
                             *errorPtr = [NSError errorWithDomain:K9LogPatternParserErrorDomain
-                                                            code:K9LogPatternParserUnclosedBraceError
+                                                            code:K9LogPatternParserErrorUnclosedBrace
                                                         userInfo:nil];
                         }
 
@@ -145,7 +145,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
     return [self initWithComponents:@[]];
 }
 
-- (instancetype)initWithComponents:(NSArray *)components
+- (nonnull instancetype)initWithComponents:(nonnull NSArray<id<K9LogPatternComponent>> *)components
 {
     if ((self = [super init])) {
         self.components = components;
@@ -159,14 +159,14 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
     return _components.count;
 }
 
-- (id<K9LogPatternComponent>)componentAtIndex:(NSUInteger)index
+- (nonnull id<K9LogPatternComponent>)componentAtIndex:(NSUInteger)index
 {
     return _components[index];
 }
 
 #pragma mark K9LogPatternComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     NSMutableString *buffer = [NSMutableString string];
 
@@ -179,7 +179,7 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
 
 #pragma mark Indexed Subscripting
 
-- (id<K9LogPatternComponent>)objectAtIndexedSubscript:(NSUInteger)idx
+- (nonnull id<K9LogPatternComponent>)objectAtIndexedSubscript:(NSUInteger)idx
 {
     return [_components objectAtIndexedSubscript:idx];
 }

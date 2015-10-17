@@ -10,7 +10,7 @@
 
 @implementation K9LogPatternDateComponent
 
-+ (NSDateFormatter *)createDateFormatterWithNameOrFormat:(NSString *)nameOfFormat
++ (nonnull NSDateFormatter *)createDateFormatterWithNameOrFormat:(nonnull NSString *)nameOfFormat
 {
     static NSDictionary *predefinedDateFormats;
     static NSLocale *en_US_POSIX;
@@ -76,7 +76,7 @@
     return self;
 }
 
-- (NSDateFormatter *)dateFormatter
+- (nonnull NSDateFormatter *)dateFormatter
 {
     NSDateFormatter *dateFormatter = _threadLocalDateFormatter.value;
 
@@ -99,7 +99,7 @@
     return [[self dateFormatter] timeZone];
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     NSDateFormatter *dateFormatter = [self dateFormatter];
 

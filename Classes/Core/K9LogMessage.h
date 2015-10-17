@@ -11,16 +11,16 @@ typedef NS_ENUM(NSInteger, K9LogMessageLevel) {
 
 @protocol K9LogMessage <NSObject>
 
-- (NSString *)k9_messageText;
+- (nonnull NSString *)k9_messageText;
 
 - (K9LogMessageLevel)k9_logLevel;
 
-- (NSDate *)k9_timestamp;
+- (nonnull NSDate *)k9_timestamp;
 
-- (NSString *)k9_filePath;
+- (nonnull NSString *)k9_filePath;
 
 - (NSUInteger)k9_lineNumber;
 
-- (NSString *)k9_methodName;
+- (nonnull NSString *)k9_methodName;
 
 @end

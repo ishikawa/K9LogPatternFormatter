@@ -8,14 +8,14 @@
 
 @implementation K9LogPatternMethodNameComponentTests
 
-- (void)testStringFromNil
+- (void)testStringFromEmpty
 {
     K9LogPatternMethodNameComponent *component = [[K9LogPatternMethodNameComponent alloc] init];
 
     LogMessage *message = [[LogMessage alloc] init];
-    message.methodName = nil;
+    message.methodName = @"";
 
-    XCTAssertNil([component stringFromLogMessage:message]);
+    XCTAssertEqualObjects([component stringFromLogMessage:message], @"");
 }
 
 - (void)testStringFromEmptyPath

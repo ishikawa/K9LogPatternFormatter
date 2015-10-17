@@ -22,7 +22,7 @@
     return self;
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return _text;
 }
@@ -31,7 +31,7 @@
 
 @implementation K9LogPatternPercentSignComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return @"%";
 }
@@ -50,7 +50,7 @@
     return [super init];
 }
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
@@ -63,7 +63,7 @@
 
 @implementation K9LogPatternMessageComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return [logMessage k9_messageText];
 }
@@ -74,7 +74,7 @@
 
 @implementation K9LogPatternLevelComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     switch ([logMessage k9_logLevel]) {
         case K9LogMessageLevelVerbose:
@@ -98,7 +98,7 @@
 
 @implementation K9LogPatternFilePathComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return [logMessage k9_filePath];
 }
@@ -109,7 +109,7 @@
 
 @implementation K9LogPatternLineNumberComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return [NSString stringWithFormat:@"%lu", (unsigned long)[logMessage k9_lineNumber]];
 }
@@ -120,7 +120,7 @@
 
 @implementation K9LogPatternMethodNameComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     return [logMessage k9_methodName];
 }
