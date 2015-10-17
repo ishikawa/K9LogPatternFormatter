@@ -1,10 +1,8 @@
 #import "K9LogPatternDateComponent.h"
-#import "K9ThreadLocal.h"
 
 @interface K9LogPatternDateComponent ()
 
-// Prior to iOS 7.0 / OS X 10.9: NSDateFormatter is NOT thread safe.
-@property (nonatomic) K9ThreadLocal *threadLocalDateFormatter;
+@property (nonatomic, nonnull) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -69,8 +67,6 @@
         if (parameters.count > 0) {
             _nameOrFormat = parameters[0];
         }
-
-        _threadLocalDateFormatter = [[K9ThreadLocal alloc] init];
     }
 
     return self;
@@ -78,15 +74,11 @@
 
 - (nonnull NSDateFormatter *)dateFormatter
 {
-    NSDateFormatter *dateFormatter = _threadLocalDateFormatter.value;
-
-    if (!dateFormatter) {
-        dateFormatter = [[self class] createDateFormatterWithNameOrFormat:_nameOrFormat];
-
-        _threadLocalDateFormatter.value = dateFormatter;
+    if (!_dateFormatter) {
+        _dateFormatter = [[self class] createDateFormatterWithNameOrFormat:_nameOrFormat];
     }
 
-    return dateFormatter;
+    return _dateFormatter;
 }
 
 - (NSLocale *)locale
