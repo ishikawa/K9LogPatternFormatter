@@ -30,12 +30,8 @@
 		A50F7AA718C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */; };
 		A50F7AA918C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */; };
 		A50F7AAA18C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */; };
-		A50F7AAE18C5EE4C003B795E /* K9ThreadLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */; };
-		A50F7AAF18C5EE4C003B795E /* K9ThreadLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */; };
 		A50F7AB218C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */; };
 		A50F7AB318C5F1FF003B795E /* K9LogPatternDateComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */; };
-		A50F7AB618C5F92F003B795E /* K9ThreadLocalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */; };
-		A50F7AB718C5F92F003B795E /* K9ThreadLocalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */; };
 		A50F7ABD18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */; };
 		A50F7ABE18C60369003B795E /* K9LogDatePatternComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */; };
 		A50F7AC018C61809003B795E /* K9LogPatternParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */; };
@@ -98,12 +94,8 @@
 		A50F7AA118C5B4C8003B795E /* K9LogLevelPatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogLevelPatternComponentTests.m; sourceTree = "<group>"; };
 		A50F7AA518C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMinWidthConstraintTests.m; sourceTree = "<group>"; };
 		A50F7AA818C5D498003B795E /* K9LogPatternMaxWidthConstraintTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternMaxWidthConstraintTests.m; sourceTree = "<group>"; };
-		A50F7AAC18C5EE4C003B795E /* K9ThreadLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9ThreadLocal.h; sourceTree = "<group>"; };
-		A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9ThreadLocal.m; sourceTree = "<group>"; };
 		A50F7AB018C5F1FF003B795E /* K9LogPatternDateComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = K9LogPatternDateComponent.h; sourceTree = "<group>"; };
 		A50F7AB118C5F1FF003B795E /* K9LogPatternDateComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternDateComponent.m; sourceTree = "<group>"; };
-		A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9ThreadLocalTests.m; sourceTree = "<group>"; };
-		A50F7AB818C5FCB3003B795E /* K9ThreadLocal+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "K9ThreadLocal+Private.h"; sourceTree = "<group>"; };
 		A50F7ABC18C60369003B795E /* K9LogDatePatternComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogDatePatternComponentTests.m; sourceTree = "<group>"; };
 		A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternParserTests.m; sourceTree = "<group>"; };
 		A52CE92218C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = K9LogPatternFilePathComponentTests.m; sourceTree = "<group>"; };
@@ -199,16 +191,6 @@
 			name = "Pattern Modifier";
 			sourceTree = "<group>";
 		};
-		A50F7AB418C5F415003B795E /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				A50F7AAC18C5EE4C003B795E /* K9ThreadLocal.h */,
-				A50F7AB818C5FCB3003B795E /* K9ThreadLocal+Private.h */,
-				A50F7AAD18C5EE4C003B795E /* K9ThreadLocal.m */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
 		A580A20418C2C2EA00AD8F75 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +224,6 @@
 			children = (
 				A580A24018C4AEB000AD8F75 /* LogMessage.h */,
 				A580A24118C4AEB000AD8F75 /* LogMessage.m */,
-				A50F7AB518C5F92F003B795E /* K9ThreadLocalTests.m */,
 				A50F7ABF18C61809003B795E /* K9LogPatternParserTests.m */,
 				A580A20E18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m */,
 				A52E54DA1BC3FB0F0017D16A /* CocoaLumberjackTests.m */,
@@ -275,7 +256,6 @@
 				A580A22818C2D5F500AD8F75 /* K9LogPatternModifier.m */,
 				A580A22918C2D5F500AD8F75 /* K9LogPatternParser.h */,
 				A580A22A18C2D5F500AD8F75 /* K9LogPatternParser.m */,
-				A50F7AB418C5F415003B795E /* Utilities */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -484,9 +464,7 @@
 				A50F7AC118C61809003B795E /* K9LogPatternParserTests.m in Sources */,
 				A50F7AA718C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */,
 				A550A24C18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m in Sources */,
-				A50F7AAF18C5EE4C003B795E /* K9ThreadLocal.m in Sources */,
 				A580A21018C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */,
-				A50F7AB718C5F92F003B795E /* K9ThreadLocalTests.m in Sources */,
 				A52CE92418C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m in Sources */,
 				A52CE93218C9E169000D2670 /* K9LogPatternFileNameComponent.m in Sources */,
 				A580A23118C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */,
@@ -514,9 +492,7 @@
 				A52E54DB1BC3FB0F0017D16A /* CocoaLumberjackTests.m in Sources */,
 				A50F7AA618C5CBE9003B795E /* K9LogPatternMinWidthConstraintTests.m in Sources */,
 				A550A24B18CE0872007E236B /* K9LogPatternMethodNameComponentTests.m in Sources */,
-				A50F7AAE18C5EE4C003B795E /* K9ThreadLocal.m in Sources */,
 				A580A20F18C2C30400AD8F75 /* K9LumberjackPatternLogFormatterTests.m in Sources */,
-				A50F7AB618C5F92F003B795E /* K9ThreadLocalTests.m in Sources */,
 				A52CE92318C8B0B7000D2670 /* K9LogPatternFilePathComponentTests.m in Sources */,
 				A52CE93118C9E169000D2670 /* K9LogPatternFileNameComponent.m in Sources */,
 				A580A23018C2D5F500AD8F75 /* K9LogPatternModifier.m in Sources */,
