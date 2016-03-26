@@ -51,7 +51,24 @@ NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorD
 
             Class componentClass = nil;
 
-            if ([scanner scanString:@"m" intoString:NULL]) {
+            // Long names
+            if ([scanner scanString:@"message" intoString:NULL]) {
+                componentClass = [K9LogPatternMessageComponent class];
+            } else if ([scanner scanString:@"level" intoString:NULL]) {
+                componentClass = [K9LogPatternLevelComponent class];
+            } else if ([scanner scanString:@"date" intoString:NULL]) {
+                componentClass = [K9LogPatternDateComponent class];
+            } else if ([scanner scanString:@"file" intoString:NULL]) {
+                componentClass = [K9LogPatternFileNameComponent class];
+            } else if ([scanner scanString:@"location" intoString:NULL]) {
+                componentClass = [K9LogPatternFilePathComponent class];
+            } else if ([scanner scanString:@"line" intoString:NULL]) {
+                componentClass = [K9LogPatternLineNumberComponent class];
+            } else if ([scanner scanString:@"method" intoString:NULL]) {
+                componentClass = [K9LogPatternMethodNameComponent class];
+            }
+            // Short names
+            else if ([scanner scanString:@"m" intoString:NULL]) {
                 componentClass = [K9LogPatternMessageComponent class];
             } else if ([scanner scanString:@"p" intoString:NULL]) {
                 componentClass = [K9LogPatternLevelComponent class];
