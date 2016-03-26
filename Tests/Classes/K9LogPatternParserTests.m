@@ -92,6 +92,14 @@
                                      @"%l": [K9LogPatternFilePathComponent class],
                                      @"%L": [K9LogPatternLineNumberComponent class],
                                      @"%M": [K9LogPatternMethodNameComponent class],
+
+                                     // Long form
+                                     @"%message": [K9LogPatternMessageComponent class],
+                                     @"%level": [K9LogPatternLevelComponent class],
+                                     @"%file": [K9LogPatternFileNameComponent class],
+                                     @"%location": [K9LogPatternFilePathComponent class],
+                                     @"%line": [K9LogPatternLineNumberComponent class],
+                                     @"%method": [K9LogPatternMethodNameComponent class],
                                      };
 
     [klassByPattern enumerateKeysAndObjectsUsingBlock:^(NSString *pattern, Class klass, BOOL *stop) {
