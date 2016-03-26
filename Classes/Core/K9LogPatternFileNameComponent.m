@@ -2,14 +2,13 @@
 
 @implementation K9LogPatternFileNameComponent
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage
 {
     const char *filePath = [[logMessage k9_filePath] UTF8String];
 
     if (!filePath) {
-        return nil;
+        return @"";
     }
-
 
     const char *pend = filePath;
 

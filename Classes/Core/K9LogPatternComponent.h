@@ -9,7 +9,7 @@
 
 @required
 
-- (NSString *)stringFromLogMessage:(id<K9LogMessage>)logMessage;
+- (nonnull NSString *)stringFromLogMessage:(nonnull id<K9LogMessage>)logMessage;
 
 @end
 
@@ -19,7 +19,7 @@
 
 @required
 
-- (instancetype)initWithParameters:(NSArray *)parameters;
+- (nonnull instancetype)initWithParameters:(nonnull NSArray *)parameters;
 
 @end
 
@@ -29,9 +29,9 @@
 
 @interface K9LogPatternLiteralTextComponent : NSObject <K9LogPatternComponent>
 
-@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly, nonnull) NSString *text;
 
-- (instancetype)initWithText:(NSString *)text;
+- (nonnull instancetype)initWithText:(nonnull NSString *)text;
 
 @end
 

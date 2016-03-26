@@ -10,9 +10,9 @@
 
 @implementation DDLogMessage (K9LogMessage)
 
-- (NSString *)k9_messageText
+- (nonnull NSString *)k9_messageText
 {
-    return self.message;
+    return self.message ? : @"";
 }
 
 - (K9LogMessageLevel)k9_logLevel
@@ -36,14 +36,14 @@
     }
 }
 
-- (NSDate *)k9_timestamp
+- (nonnull NSDate *)k9_timestamp
 {
-    return self.timestamp;
+    return self.timestamp ? : [NSDate date];
 }
 
-- (NSString *)k9_filePath
+- (nonnull NSString *)k9_filePath
 {
-    return self.file;
+    return self.file ? : @"";
 }
 
 - (NSUInteger)k9_lineNumber
@@ -51,9 +51,9 @@
     return self.line;
 }
 
-- (NSString *)k9_methodName
+- (nonnull NSString *)k9_methodName
 {
-    return self.function;
+    return self.function ? : @"";
 }
 
 @end
@@ -68,18 +68,18 @@
 
 @implementation K9LogLumberjackPatternFormatter
 
-- (instancetype)init
+- (nonnull instancetype)init
 {
     return [self initWithPattern:@"%m"];
 }
 
-- (instancetype)initWithPattern:(NSString *)pattern
+- (nonnull instancetype)initWithPattern:(nonnull NSString *)pattern
 {
     return [self initWithPattern:pattern error:NULL];
 }
 
-- (instancetype)initWithPattern:(NSString *)pattern
-                          error:(NSError **)errorPtr
+- (nonnull instancetype)initWithPattern:(nonnull NSString *)pattern
+                                  error:(NSError * _Nullable * _Nullable)errorPtr
 {
     if (!pattern) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException

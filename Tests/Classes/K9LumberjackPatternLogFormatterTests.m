@@ -120,11 +120,14 @@
     }
 
     // Given nil
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
     {
         XCTAssertThrowsSpecificNamed([[K9LogLumberjackPatternFormatter alloc] initWithPattern:nil error:NULL],
                                      NSException,
                                      NSInvalidArgumentException);
     }
+#pragma clang diagnostic pop
 }
 
 #pragma mark Formatting
@@ -141,7 +144,7 @@
         XCTAssertNil(formatter);
         XCTAssertNotNil(error);
         XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternParserUnrecognizedPatternError);
+        XCTAssertEqual(error.code, K9LogPatternParserErrorUnrecognizedPattern);
     }
 
     // Unrecognized specifier
@@ -154,7 +157,7 @@
         XCTAssertNil(formatter);
         XCTAssertNotNil(error);
         XCTAssertEqualObjects(error.domain, K9LogPatternParserErrorDomain);
-        XCTAssertEqual(error.code, K9LogPatternParserUnrecognizedPatternError);
+        XCTAssertEqual(error.code, K9LogPatternParserErrorUnrecognizedPattern);
     }
 }
 

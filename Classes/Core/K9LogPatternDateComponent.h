@@ -3,10 +3,10 @@
 
 @interface K9LogPatternDateComponent : NSObject <K9LogPatternParameterizedComponent>
 
-@property (nonatomic, readonly) NSString   *nameOrFormat;
-@property (nonatomic, readonly) NSLocale   *locale;
-@property (nonatomic, readonly) NSTimeZone *timeZone;
+@property (nonatomic, readonly, nonnull)         NSString   *nameOrFormat;
+@property (nonatomic, readonly, null_resettable) NSLocale   *locale;
+@property (nonatomic, readonly, null_resettable) NSTimeZone *timeZone;
 
-- (instancetype)initWithNameOrFormat:(NSString *)nameOrFormat;
+- (nonnull instancetype)initWithNameOrFormat:(nonnull NSString *)nameOrFormat;
 
 @end

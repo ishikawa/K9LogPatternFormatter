@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name     = 'K9LogPatternFormatter'
-  spec.version  = '1.0.0'
+  spec.version  = '2.0.0'
   spec.summary  = 'K9LogPatternFormatter is flexible logging message formatter configurable with pattern string'
   spec.homepage = 'https://github.com/ishikawa/K9LogPatternFormatter'
   spec.license  = 'MIT'
@@ -13,8 +13,8 @@ Pod::Spec.new do |spec|
   spec.frameworks   = 'Foundation'
   spec.requires_arc = true
 
-  spec.ios.deployment_target = '5.0'
-  spec.osx.deployment_target = '10.7'
+  spec.ios.deployment_target = '7.0'
+  spec.osx.deployment_target = '10.9'
 
   spec.subspec 'Core' do |core|
     core.source_files = 'Classes/Core/**/*.{h,m}'

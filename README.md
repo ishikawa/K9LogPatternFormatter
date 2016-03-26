@@ -1,5 +1,10 @@
 # K9LogPatternFormatter
 
+[![CI Status](https://travis-ci.org/ishikawa/K9LogPatternFormatter.svg?branch=master)](https://travis-ci.org/ishikawa/K9LogPatternFormatter?branch=master)
+[![Version](https://img.shields.io/cocoapods/v/K9LogPatternFormatter.svg?style=flat)](http://cocoapods.org/pods/K9LogPatternFormatter)
+[![License](https://img.shields.io/cocoapods/l/K9LogPatternFormatter.svg?style=flat)](http://cocoapods.org/pods/K9LogPatternFormatter)
+[![Platform](https://img.shields.io/cocoapods/p/K9LogPatternFormatter.svg?style=flat)](http://cocoapods.org/pods/K9LogPatternFormatter)
+
 **K9LogPatternFormatter** is flexible logging message formatter configurable with pattern string (inspired by [Log4j PatternLayout](http://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout)). It includes a formatter implementation for [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack). Writing a new formatter for other framework is easy.
 
 ## Usage
@@ -58,8 +63,9 @@ W: Message2 at File2:32
 
 ## Requirements
 
-- Mac OS X 10.8
+- Mac OS X 10.9
 - iOS 7.0
+- Xcode 7
 
 ## Installation
 

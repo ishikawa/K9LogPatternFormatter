@@ -26,9 +26,12 @@
 
 - (void)testInitWithNil
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
     XCTAssertThrowsSpecificNamed([[K9LogPatternLiteralTextComponent alloc] initWithText:nil],
                                  NSException,
                                  NSInvalidArgumentException);
+#pragma clang diagnostic pop
 }
 
 @end

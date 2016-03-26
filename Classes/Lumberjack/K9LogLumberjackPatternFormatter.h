@@ -3,11 +3,11 @@
 
 @interface K9LogLumberjackPatternFormatter : NSObject <DDLogFormatter>
 
-@property (nonatomic, readonly) NSString *pattern;
+@property (nonatomic, readonly, nonnull) NSString *pattern;
 
-- (instancetype)initWithPattern:(NSString *)pattern;
+- (nonnull instancetype)initWithPattern:(nonnull NSString *)pattern;
 
-- (instancetype)initWithPattern:(NSString *)pattern
-                          error:(NSError **)errorPtr;
+- (nonnull instancetype)initWithPattern:(nonnull NSString *)pattern
+                                  error:(NSError * _Nullable * _Nullable)errorPtr;
 
 @end
