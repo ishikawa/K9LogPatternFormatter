@@ -23,7 +23,7 @@ consoleLogger.logFormatter = [[K9LogLumberjackPatternFormatter alloc] initWithPa
 
 Supported patterns:
 
-* `%d{pattern}` timestamp formatted by using `NSDateFormatter`
+* `%d{pattern}`, `%date{pattern}` timestamp formatted by using `NSDateFormatter`
     * `%d{HH':'mm':'ss}` prints `14:34:02`
     * Threre are some predefined formats:
         1. `%d{ISO8601}` prints `2014-03-12 14:34:02,781`
@@ -32,12 +32,12 @@ Supported patterns:
         4. `%d{DATE}` prints `12 Mar 2014 14:34:02,781`
         5. `%d{COMPACT}` prints `20140312143402781`
     * If no format is given, `ISO8601` is used.
-* `%m` message
-* `%p` log level
-* `%F` file name without extension
-* `%l` file path
-* `%L` line number
-* `%M` function or method name
+* `%m`, `%message` message
+* `%p`, `%level` log level
+* `%F`, `%file` file name without extension
+* `%l`, `%location` file path
+* `%L`, `%line` line number
+* `%M`, `%method` function or method name
 * `%%` single percent sign (`'%'`)
 
 Min/max width modifier is also supported:
@@ -80,4 +80,3 @@ or, you can grab core classes to writting your own formatter:
 ## License
 
 MIT license
-
