@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 #import "LogMessage.h"
-#import "K9LogPatternComponent.h"
+#import "K9LogPatternLevelComponent.h"
 
 @interface K9LogLevelPatternComponentTests : XCTestCase
 

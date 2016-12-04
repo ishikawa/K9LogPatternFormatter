@@ -2,6 +2,7 @@
 #import "K9LogPatternComponent.h"
 #import "K9LogPatternDateComponent.h"
 #import "K9LogPatternFileNameComponent.h"
+#import "K9LogPatternLevelComponent.h"
 #import "K9LogPatternModifier.h"
 
 NSString *const K9LogPatternParserErrorDomain = @"org.metareal.LogPatternParser.ErrorDomain";

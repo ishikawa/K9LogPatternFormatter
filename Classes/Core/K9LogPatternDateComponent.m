@@ -63,7 +63,7 @@
 
 - (instancetype)initWithParameters:(NSArray *)parameters
 {
-    if ((self = [super initWithParameters:parameters])) {
+    if ((self = [super init])) {
         if (parameters.count > 0) {
             _nameOrFormat = parameters[0];
         }
