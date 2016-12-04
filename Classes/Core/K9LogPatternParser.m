@@ -4,7 +4,7 @@
 #import "K9LogPatternFileNameComponent.h"
 #import "K9LogPatternModifier.h"
 
-NSString *const K9LogPatternParserErrorDomain = @"jp.ko9.LogPatternParser.ErrorDomain";
+NSString *const K9LogPatternParserErrorDomain = @"org.metareal.LogPatternParser.ErrorDomain";
 
 @implementation K9LogPatternParser
 
